@@ -17,5 +17,10 @@ namespace Kehstartir.Data.Contracts.Entities
         public string UserId { get; set; }
         public virtual AspNetUsers User { get; set; }
         public virtual ICollection<CompanyTag> CompanyTags { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Image> Images { get; set; }
+        public virtual ICollection<BonusCompany> BonusCompanies { get; set; }
+        public virtual ICollection<Post> Posts { get; set; }
+        public virtual Rating Rating { get; set; }
     }
 }

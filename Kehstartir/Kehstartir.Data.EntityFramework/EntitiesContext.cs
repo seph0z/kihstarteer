@@ -28,6 +28,16 @@ namespace Kehstartir.Data.EntityFramework
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<CompanyTag> CompanyTags { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
+        public virtual DbSet<Comment> Comments { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
+        public virtual DbSet<Bonus> Bonuses { get; set; }
+        public virtual DbSet<BonusAspNetUsers> BonusAspNetUsers { get; set; }
+        public virtual DbSet<BonusCompany> BonusCompanies { get; set; }
+        public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<Rating> Ratings { get; set; }
+        public virtual DbSet<RatingAspNetUsers> RatingAspNetUsers { get; set; }
+        public virtual DbSet<Like> Likes { get; set; }
+        public virtual DbSet<LikeAspNetUsers> LikeAspNetUsers { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -156,6 +166,10 @@ namespace Kehstartir.Data.EntityFramework
                 entity.HasOne(d => d.User)
                 .WithMany(p => p.Companies)
                 .HasForeignKey(d => d.UserId);
+
+                entity.HasOne(d => d.Rating)
+                .WithOne(p => p.Company)
+                .HasForeignKey<Rating>(d => d.CompanyId);
             });
 
             modelBuilder.Entity<CompanyTag>(entity =>
@@ -169,6 +183,91 @@ namespace Kehstartir.Data.EntityFramework
                 entity.HasOne(d => d.Tag)
                 .WithMany(p => p.CompanyTags)
                 .HasForeignKey(d => d.TagId);
+            });
+
+            modelBuilder.Entity<Comment>(entity =>
+            {
+                entity.HasOne(d => d.Company)
+                .WithMany(p => p.Comments)
+                .HasForeignKey(d => d.CompanyId);
+
+                entity.HasOne(d => d.User)
+                .WithMany(p => p.Comments)
+                .HasForeignKey(d => d.UserId);
+
+                entity.HasOne(d => d.Like)
+                .WithOne(p => p.Comment)
+                .HasForeignKey<Like>(d => d.CommentId);
+            });
+
+            modelBuilder.Entity<Image>(entity =>
+            {
+                entity.HasOne(d => d.Company)
+                .WithMany(p => p.Images)
+                .HasForeignKey(d => d.CompanyId);
+            });
+
+            modelBuilder.Entity<BonusCompany>(entity =>
+            {
+                entity.HasKey(sc => new { sc.BonusId, sc.CompanyId });
+
+                entity.HasOne(d => d.Bonus)
+                .WithMany(p => p.BonusCompanies)
+                .HasForeignKey(d => d.BonusId);
+
+                entity.HasOne(d => d.Company)
+                .WithMany(p => p.BonusCompanies)
+                .HasForeignKey(d => d.CompanyId);
+            });
+
+            modelBuilder.Entity<BonusAspNetUsers>(entity =>
+            {
+                entity.HasKey(sc => new { sc.BonusId, sc.UserId });
+
+                entity.HasOne(d => d.Bonus)
+                .WithMany(p => p.BonusAspNetUsers)
+                .HasForeignKey(d => d.BonusId);
+
+                entity.HasOne(d => d.User)
+                .WithMany(p => p.BonusAspNetUsers)
+                .HasForeignKey(d => d.UserId);
+            });
+
+            modelBuilder.Entity<Post>(entity =>
+            {
+                entity.HasOne(d => d.Company)
+                .WithMany(p => p.Posts)
+                .HasForeignKey(d => d.CompanyId);
+
+                entity.HasOne(d => d.User)
+                .WithMany(p => p.Posts)
+                .HasForeignKey(d => d.UserId);
+            });
+
+            modelBuilder.Entity<RatingAspNetUsers>(entity =>
+            {
+                entity.HasKey(sc => new { sc.RatingId, sc.UserId });
+
+                entity.HasOne(d => d.Rating)
+                .WithMany(p => p.RatingAspNetUsers)
+                .HasForeignKey(d => d.RatingId);
+
+                entity.HasOne(d => d.User)
+                .WithMany(p => p.RatingAspNetUsers)
+                .HasForeignKey(d => d.UserId);
+            });
+
+            modelBuilder.Entity<LikeAspNetUsers>(entity =>
+            {
+                entity.HasKey(sc => new { sc.LikeId, sc.UserId });
+
+                entity.HasOne(d => d.Like)
+                .WithMany(p => p.LikeAspNetUsers)
+                .HasForeignKey(d => d.LikeId);
+
+                entity.HasOne(d => d.User)
+                .WithMany(p => p.LikeAspNetUsers)
+                .HasForeignKey(d => d.UserId);
             });
         }
     }
