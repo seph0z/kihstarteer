@@ -24,6 +24,12 @@ namespace Kehstartir.Data.EntityFramework
         public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
 
+        public virtual DbSet<Profile> Profiles { get; set; }
+        public virtual DbSet<Company> Companies { get; set; }
+        public virtual DbSet<CompanyTag> CompanyTags { get; set; }
+        public virtual DbSet<Tag> Tags { get; set; }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
