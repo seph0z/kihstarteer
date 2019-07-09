@@ -1,0 +1,14 @@
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\bin\Debug\netcoreapp2.2\Kehstartir.Data.EntityFramework.deps.json
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\bin\Debug\netcoreapp2.2\Kehstartir.Data.EntityFramework.dll
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\obj\Debug\netcoreapp2.2\Kehstartir.Data.EntityFramework.csprojAssemblyReference.cache
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\obj\Debug\netcoreapp2.2\Kehstartir.Data.EntityFramework.csproj.CoreCompileInputs.cache
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\obj\Debug\netcoreapp2.2\Kehstartir.Data.EntityFramework.AssemblyInfoInputs.cache
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\obj\Debug\netcoreapp2.2\Kehstartir.Data.EntityFramework.AssemblyInfo.cs
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\bin\Debug\netcoreapp2.2\Kehstartir.Data.EntityFramework.runtimeconfig.json
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\bin\Debug\netcoreapp2.2\Kehstartir.Data.EntityFramework.runtimeconfig.dev.json
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\bin\Debug\netcoreapp2.2\Kehstartir.Data.EntityFramework.pdb
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\obj\Debug\netcoreapp2.2\Kehstartir.Data.EntityFramework.dll
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\obj\Debug\netcoreapp2.2\Kehstartir.Data.EntityFramework.pdb
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\bin\Debug\netcoreapp2.2\Kehstartir.Data.Contracts.dll
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\bin\Debug\netcoreapp2.2\Kehstartir.Data.Contracts.pdb
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.EntityFramework\obj\Debug\netcoreapp2.2\Kehstartir.Data.EntityFramework.csproj.CopyComplete

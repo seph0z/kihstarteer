@@ -1,0 +1,9 @@
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Infrastructure\bin\Debug\netcoreapp2.2\Kehstartir.Infrastructure.deps.json
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Infrastructure\bin\Debug\netcoreapp2.2\Kehstartir.Infrastructure.dll
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Infrastructure\bin\Debug\netcoreapp2.2\Kehstartir.Infrastructure.pdb
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Infrastructure\obj\Debug\netcoreapp2.2\Kehstartir.Infrastructure.csprojAssemblyReference.cache
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Infrastructure\obj\Debug\netcoreapp2.2\Kehstartir.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Infrastructure\obj\Debug\netcoreapp2.2\Kehstartir.Infrastructure.AssemblyInfoInputs.cache
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Infrastructure\obj\Debug\netcoreapp2.2\Kehstartir.Infrastructure.AssemblyInfo.cs
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Infrastructure\obj\Debug\netcoreapp2.2\Kehstartir.Infrastructure.dll
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Infrastructure\obj\Debug\netcoreapp2.2\Kehstartir.Infrastructure.pdb

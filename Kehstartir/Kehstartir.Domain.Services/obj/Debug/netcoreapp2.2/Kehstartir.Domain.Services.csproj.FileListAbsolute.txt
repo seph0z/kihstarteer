@@ -1,0 +1,9 @@
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Domain.Services\bin\Debug\netcoreapp2.2\Kehstartir.Domain.Services.deps.json
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Domain.Services\bin\Debug\netcoreapp2.2\Kehstartir.Domain.Services.dll
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Domain.Services\bin\Debug\netcoreapp2.2\Kehstartir.Domain.Services.pdb
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Domain.Services\obj\Debug\netcoreapp2.2\Kehstartir.Domain.Services.csprojAssemblyReference.cache
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Domain.Services\obj\Debug\netcoreapp2.2\Kehstartir.Domain.Services.csproj.CoreCompileInputs.cache
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Domain.Services\obj\Debug\netcoreapp2.2\Kehstartir.Domain.Services.AssemblyInfoInputs.cache
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Domain.Services\obj\Debug\netcoreapp2.2\Kehstartir.Domain.Services.AssemblyInfo.cs
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Domain.Services\obj\Debug\netcoreapp2.2\Kehstartir.Domain.Services.dll
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Domain.Services\obj\Debug\netcoreapp2.2\Kehstartir.Domain.Services.pdb
