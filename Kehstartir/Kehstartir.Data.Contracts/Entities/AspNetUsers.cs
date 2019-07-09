@@ -33,5 +33,8 @@ namespace Kehstartir.Data.Contracts.Entities
         public virtual ICollection<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual ICollection<AspNetUserRoles> AspNetUserRoles { get; set; }
         public virtual ICollection<AspNetUserTokens> AspNetUserTokens { get; set; }
+
+        public virtual Profile Profile { get; set; }
+        public virtual ICollection<Company> Companies { get; set; }
     }
 }

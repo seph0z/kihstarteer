@@ -28,7 +28,7 @@ namespace Kehstartir.Data.EntityFramework
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Kehstartir;Trusted_Connection=True;");
+                optionsBuilder.UseLazyLoadingProxies().UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Kehstartir;Trusted_Connection=True;");
             }
         }
 
@@ -136,6 +136,33 @@ namespace Kehstartir.Data.EntityFramework
                 entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
 
                 entity.Property(e => e.UserName).HasMaxLength(256);
+            });
+
+            modelBuilder.Entity<Profile>(entity =>
+            {
+                entity.HasOne(d => d.User)
+                .WithOne(p => p.Profile)
+                .HasForeignKey<Profile>(d => d.UserId);
+            });
+
+            modelBuilder.Entity<Company>(entity =>
+            {
+                entity.HasOne(d => d.User)
+                .WithMany(p => p.Companies)
+                .HasForeignKey(d => d.UserId);
+            });
+
+            modelBuilder.Entity<CompanyTag>(entity =>
+            {
+                entity.HasKey(sc => new { sc.CompanyId, sc.TagId });
+
+                entity.HasOne(d => d.Company)
+                .WithMany(p => p.CompanyTags)
+                .HasForeignKey(d => d.CompanyId);
+
+                entity.HasOne(d => d.Tag)
+                .WithMany(p => p.CompanyTags)
+                .HasForeignKey(d => d.TagId);
             });
         }
     }
