@@ -38,7 +38,7 @@ namespace Kehstartir.Data.EntityFramework
         public virtual DbSet<RatingAspNetUsers> RatingAspNetUsers { get; set; }
         public virtual DbSet<Like> Likes { get; set; }
         public virtual DbSet<LikeAspNetUsers> LikeAspNetUsers { get; set; }
-
+        public virtual DbSet<Theme> Themes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -170,6 +170,10 @@ namespace Kehstartir.Data.EntityFramework
                 entity.HasOne(d => d.Rating)
                 .WithOne(p => p.Company)
                 .HasForeignKey<Rating>(d => d.CompanyId);
+
+                entity.HasOne(d => d.Theme)
+                .WithMany(p => p.Companies)
+                .HasForeignKey(d => d.ThemeId);
             });
 
             modelBuilder.Entity<CompanyTag>(entity =>

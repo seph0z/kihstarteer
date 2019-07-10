@@ -8,8 +8,19 @@
 
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kehstartir.Data.Contracts\Kehstartir.Data.Contracts.csproj" />
+    <ProjectReference Include="..\Kehstartir.Data.EntityFramework\Kehstartir.Data.EntityFramework.csproj" />
+    <ProjectReference Include="..\Kehstartir.Domain.Contracts\Kehstartir.Domain.Contracts.csproj" />
+    <ProjectReference Include="..\Kehstartir.Domain.Services\Kehstartir.Domain.Services.csproj" />
+    <ProjectReference Include="..\Kehstartir.Infrastructure\Kehstartir.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

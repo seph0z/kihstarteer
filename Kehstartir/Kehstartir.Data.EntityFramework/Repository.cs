@@ -14,32 +14,38 @@ namespace Kehstartir.Data.EntityFramework
         }
         public void Add(T entity)
         {
-            throw new NotImplementedException();
+            var dbSet = entitiesContext.Set<T>();
+            dbSet.Add(entity);
         }
 
         public T Get(int id)
         {
-            throw new NotImplementedException();
+            var dbSet = entitiesContext.Set<T>();
+            var result = dbSet.Find(id);
+            return result;
         }
 
         public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return entitiesContext.Set<T>();
         }
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            var dbSet = entitiesContext.Set<T>();
+            var entity = dbSet.Find(id);
+            dbSet.Remove(entity);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            entitiesContext.SaveChanges();
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            var dbSet = entitiesContext.Set<T>();
+            dbSet.Update(entity);
         }
     }
 }

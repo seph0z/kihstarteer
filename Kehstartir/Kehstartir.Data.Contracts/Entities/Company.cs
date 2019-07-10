@@ -12,8 +12,9 @@ namespace Kehstartir.Data.Contracts.Entities
         public string VideoLink { get; set; }
         public double Amount { get; set; }
         public DateTime ExpirationDate { get; set; }
-        public string Theme { get; set; }
-        
+
+        public int ThemeId { get; set; }
+        public virtual Theme Theme { get; set; }       
         public string UserId { get; set; }
         public virtual AspNetUsers User { get; set; }
         public virtual ICollection<CompanyTag> CompanyTags { get; set; }

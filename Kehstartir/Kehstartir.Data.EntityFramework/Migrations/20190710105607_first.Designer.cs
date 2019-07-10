@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kehstartir.Data.EntityFramework.Migrations
 {
     [DbContext(typeof(EntitiesContext))]
-    [Migration("20190709202205_first")]
+    [Migration("20190710105607_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -258,7 +258,7 @@ namespace Kehstartir.Data.EntityFramework.Migrations
 
                     b.Property<DateTime>("ExpirationDate");
 
-                    b.Property<string>("Theme");
+                    b.Property<int>("ThemeId");
 
                     b.Property<string>("Title");
 
@@ -267,6 +267,8 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                     b.Property<string>("VideoLink");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ThemeId");
 
                     b.HasIndex("UserId");
 
@@ -434,6 +436,19 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                     b.ToTable("Tags");
                 });
 
+            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.Theme", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Themes");
+                });
+
             modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.AspNetRoleClaims", b =>
                 {
                     b.HasOne("Kehstartir.Data.Contracts.Entities.AspNetRoles", "Role")
@@ -519,6 +534,11 @@ namespace Kehstartir.Data.EntityFramework.Migrations
 
             modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.Company", b =>
                 {
+                    b.HasOne("Kehstartir.Data.Contracts.Entities.Theme", "Theme")
+                        .WithMany("Companies")
+                        .HasForeignKey("ThemeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("Kehstartir.Data.Contracts.Entities.AspNetUsers", "User")
                         .WithMany("Companies")
                         .HasForeignKey("UserId");

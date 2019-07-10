@@ -13,6 +13,10 @@ using Microsoft.EntityFrameworkCore;
 using Kehstartir.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Kehstartir.Data.Contracts;
+using Kehstartir.Data.EntityFramework;
+using Kehstartir.Domain.Contracts;
+using Kehstartir.Domain.Services;
 
 namespace Kehstartir.Web
 {
@@ -43,6 +47,10 @@ namespace Kehstartir.Web
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddScoped<EntitiesContext>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<ICompanyService, CompanyService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
