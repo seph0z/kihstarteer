@@ -10,7 +10,7 @@ namespace Kehstartir.Data.Contracts.Entities
         public string Name { get; set; }
         public string Image { get; set; }
 
-        public virtual ICollection<BonusCompany> BonusCompanies { get; set; }
+        public virtual ICollection<BonusCampaign> BonusCampaigns { get; set; }
         public virtual ICollection<BonusAspNetUsers> BonusAspNetUsers { get; set; }
     }
 }

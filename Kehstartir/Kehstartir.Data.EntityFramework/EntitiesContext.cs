@@ -25,14 +25,14 @@ namespace Kehstartir.Data.EntityFramework
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
 
         public virtual DbSet<Profile> Profiles { get; set; }
-        public virtual DbSet<Company> Companies { get; set; }
-        public virtual DbSet<CompanyTag> CompanyTags { get; set; }
+        public virtual DbSet<Campaign> Campaigns { get; set; }
+        public virtual DbSet<CampaignTag> CampaignTags { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Bonus> Bonuses { get; set; }
         public virtual DbSet<BonusAspNetUsers> BonusAspNetUsers { get; set; }
-        public virtual DbSet<BonusCompany> BonusCompanies { get; set; }
+        public virtual DbSet<BonusCampaign> BonusCampaigns { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
         public virtual DbSet<Rating> Ratings { get; set; }
         public virtual DbSet<RatingAspNetUsers> RatingAspNetUsers { get; set; }
@@ -161,39 +161,39 @@ namespace Kehstartir.Data.EntityFramework
                 .HasForeignKey<Profile>(d => d.UserId);
             });
 
-            modelBuilder.Entity<Company>(entity =>
+            modelBuilder.Entity<Campaign>(entity =>
             {
                 entity.HasOne(d => d.User)
-                .WithMany(p => p.Companies)
+                .WithMany(p => p.Campaigns)
                 .HasForeignKey(d => d.UserId);
 
                 entity.HasOne(d => d.Rating)
-                .WithOne(p => p.Company)
-                .HasForeignKey<Rating>(d => d.CompanyId);
+                .WithOne(p => p.Campaign)
+                .HasForeignKey<Rating>(d => d.CampaignId);
 
                 entity.HasOne(d => d.Theme)
-                .WithMany(p => p.Companies)
+                .WithMany(p => p.Campaigns)
                 .HasForeignKey(d => d.ThemeId);
             });
 
-            modelBuilder.Entity<CompanyTag>(entity =>
+            modelBuilder.Entity<CampaignTag>(entity =>
             {
-                entity.HasKey(sc => new { sc.CompanyId, sc.TagId });
+                entity.HasKey(sc => new { sc.CampaignId, sc.TagId });
 
-                entity.HasOne(d => d.Company)
-                .WithMany(p => p.CompanyTags)
-                .HasForeignKey(d => d.CompanyId);
+                entity.HasOne(d => d.Campaign)
+                .WithMany(p => p.CampaignTags)
+                .HasForeignKey(d => d.CampaignId);
 
                 entity.HasOne(d => d.Tag)
-                .WithMany(p => p.CompanyTags)
+                .WithMany(p => p.CampaignTags)
                 .HasForeignKey(d => d.TagId);
             });
 
             modelBuilder.Entity<Comment>(entity =>
             {
-                entity.HasOne(d => d.Company)
+                entity.HasOne(d => d.Campaign)
                 .WithMany(p => p.Comments)
-                .HasForeignKey(d => d.CompanyId);
+                .HasForeignKey(d => d.CampaignId);
 
                 entity.HasOne(d => d.User)
                 .WithMany(p => p.Comments)
@@ -206,22 +206,22 @@ namespace Kehstartir.Data.EntityFramework
 
             modelBuilder.Entity<Image>(entity =>
             {
-                entity.HasOne(d => d.Company)
+                entity.HasOne(d => d.Campaign)
                 .WithMany(p => p.Images)
-                .HasForeignKey(d => d.CompanyId);
+                .HasForeignKey(d => d.CampaignId);
             });
 
-            modelBuilder.Entity<BonusCompany>(entity =>
+            modelBuilder.Entity<BonusCampaign>(entity =>
             {
-                entity.HasKey(sc => new { sc.BonusId, sc.CompanyId });
+                entity.HasKey(sc => new { sc.BonusId, sc.CampaignId });
 
                 entity.HasOne(d => d.Bonus)
-                .WithMany(p => p.BonusCompanies)
+                .WithMany(p => p.BonusCampaigns)
                 .HasForeignKey(d => d.BonusId);
 
-                entity.HasOne(d => d.Company)
-                .WithMany(p => p.BonusCompanies)
-                .HasForeignKey(d => d.CompanyId);
+                entity.HasOne(d => d.Campaign)
+                .WithMany(p => p.BonusCampaigns)
+                .HasForeignKey(d => d.CampaignId);
             });
 
             modelBuilder.Entity<BonusAspNetUsers>(entity =>
@@ -239,9 +239,9 @@ namespace Kehstartir.Data.EntityFramework
 
             modelBuilder.Entity<Post>(entity =>
             {
-                entity.HasOne(d => d.Company)
+                entity.HasOne(d => d.Campaign)
                 .WithMany(p => p.Posts)
-                .HasForeignKey(d => d.CompanyId);
+                .HasForeignKey(d => d.CampaignId);
 
                 entity.HasOne(d => d.User)
                 .WithMany(p => p.Posts)

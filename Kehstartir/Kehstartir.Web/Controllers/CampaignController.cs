@@ -9,24 +9,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Kehstartir.Web.Controllers
 {
-    public class CompanyController : Controller
+    public class CampaignController : Controller
     {
-        private readonly ICompanyService companyService;
-        public CompanyController(ICompanyService companyService)
+        private readonly ICampaignService campaignService;
+        public CampaignController(ICampaignService campaignService)
         {
-            this.companyService = companyService;
+            this.campaignService = campaignService;
         }
-
         public IActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(CompanyViewModel companyViewModel)
+        public IActionResult Create(CampaignViewModel campaignViewModel)
         {
-            companyViewModel.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            companyService.Add(companyViewModel);
+            campaignViewModel.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            campaignService.Add(campaignViewModel);
             return RedirectToAction("Index");
         }
 

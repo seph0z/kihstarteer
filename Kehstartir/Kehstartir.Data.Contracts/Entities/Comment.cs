@@ -12,8 +12,8 @@ namespace Kehstartir.Data.Contracts.Entities
 
         public string UserId { get; set; }
         public virtual AspNetUsers User { get; set; }
-        public int CompanyId { get; set; }
-        public virtual Company Company { get; set; }
+        public int CampaignId { get; set; }
+        public virtual Campaign Campaign { get; set; }
         public virtual Like Like { get; set; }
     }
 }

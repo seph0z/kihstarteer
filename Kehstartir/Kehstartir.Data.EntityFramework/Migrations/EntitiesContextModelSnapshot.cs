@@ -208,49 +208,28 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                     b.ToTable("BonusAspNetUsers");
                 });
 
-            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.BonusCompany", b =>
+            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.BonusCampaign", b =>
                 {
                     b.Property<int>("BonusId");
 
-                    b.Property<int>("CompanyId");
+                    b.Property<int>("CampaignId");
 
-                    b.HasKey("BonusId", "CompanyId");
+                    b.HasKey("BonusId", "CampaignId");
 
-                    b.HasIndex("CompanyId");
+                    b.HasIndex("CampaignId");
 
-                    b.ToTable("BonusCompanies");
+                    b.ToTable("BonusCampaigns");
                 });
 
-            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.Comment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CompanyId");
-
-                    b.Property<DateTime>("Created");
-
-                    b.Property<string>("Text");
-
-                    b.Property<string>("UserId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CompanyId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Comments");
-                });
-
-            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.Company", b =>
+            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.Campaign", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<double>("Amount");
+
+                    b.Property<string>("Content");
 
                     b.Property<string>("Description");
 
@@ -270,20 +249,43 @@ namespace Kehstartir.Data.EntityFramework.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Companies");
+                    b.ToTable("Campaigns");
                 });
 
-            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.CompanyTag", b =>
+            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.CampaignTag", b =>
                 {
-                    b.Property<int>("CompanyId");
+                    b.Property<int>("CampaignId");
 
                     b.Property<int>("TagId");
 
-                    b.HasKey("CompanyId", "TagId");
+                    b.HasKey("CampaignId", "TagId");
 
                     b.HasIndex("TagId");
 
-                    b.ToTable("CompanyTags");
+                    b.ToTable("CampaignTags");
+                });
+
+            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CampaignId");
+
+                    b.Property<DateTime>("Created");
+
+                    b.Property<string>("Text");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CampaignId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.Image", b =>
@@ -292,13 +294,13 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CompanyId");
+                    b.Property<int>("CampaignId");
 
                     b.Property<string>("ImagePath");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyId");
+                    b.HasIndex("CampaignId");
 
                     b.ToTable("Images");
                 });
@@ -342,7 +344,7 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CompanyId");
+                    b.Property<int>("CampaignId");
 
                     b.Property<string>("Content");
 
@@ -354,7 +356,7 @@ namespace Kehstartir.Data.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyId");
+                    b.HasIndex("CampaignId");
 
                     b.HasIndex("UserId");
 
@@ -394,7 +396,7 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CompanyId");
+                    b.Property<int>("CampaignId");
 
                     b.Property<int>("Count");
 
@@ -402,7 +404,7 @@ namespace Kehstartir.Data.EntityFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyId")
+                    b.HasIndex("CampaignId")
                         .IsUnique();
 
                     b.ToTable("Ratings");
@@ -505,61 +507,61 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.BonusCompany", b =>
+            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.BonusCampaign", b =>
                 {
                     b.HasOne("Kehstartir.Data.Contracts.Entities.Bonus", "Bonus")
-                        .WithMany("BonusCompanies")
+                        .WithMany("BonusCampaigns")
                         .HasForeignKey("BonusId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Kehstartir.Data.Contracts.Entities.Company", "Company")
-                        .WithMany("BonusCompanies")
-                        .HasForeignKey("CompanyId")
+                    b.HasOne("Kehstartir.Data.Contracts.Entities.Campaign", "Campaign")
+                        .WithMany("BonusCampaigns")
+                        .HasForeignKey("CampaignId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.Campaign", b =>
+                {
+                    b.HasOne("Kehstartir.Data.Contracts.Entities.Theme", "Theme")
+                        .WithMany("Campaigns")
+                        .HasForeignKey("ThemeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Kehstartir.Data.Contracts.Entities.AspNetUsers", "User")
+                        .WithMany("Campaigns")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.CampaignTag", b =>
+                {
+                    b.HasOne("Kehstartir.Data.Contracts.Entities.Campaign", "Campaign")
+                        .WithMany("CampaignTags")
+                        .HasForeignKey("CampaignId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Kehstartir.Data.Contracts.Entities.Tag", "Tag")
+                        .WithMany("CampaignTags")
+                        .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.Comment", b =>
                 {
-                    b.HasOne("Kehstartir.Data.Contracts.Entities.Company", "Company")
+                    b.HasOne("Kehstartir.Data.Contracts.Entities.Campaign", "Campaign")
                         .WithMany("Comments")
-                        .HasForeignKey("CompanyId")
+                        .HasForeignKey("CampaignId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Kehstartir.Data.Contracts.Entities.AspNetUsers", "User")
                         .WithMany("Comments")
                         .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.Company", b =>
-                {
-                    b.HasOne("Kehstartir.Data.Contracts.Entities.Theme", "Theme")
-                        .WithMany("Companies")
-                        .HasForeignKey("ThemeId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Kehstartir.Data.Contracts.Entities.AspNetUsers", "User")
-                        .WithMany("Companies")
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.CompanyTag", b =>
-                {
-                    b.HasOne("Kehstartir.Data.Contracts.Entities.Company", "Company")
-                        .WithMany("CompanyTags")
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Kehstartir.Data.Contracts.Entities.Tag", "Tag")
-                        .WithMany("CompanyTags")
-                        .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.Image", b =>
                 {
-                    b.HasOne("Kehstartir.Data.Contracts.Entities.Company", "Company")
+                    b.HasOne("Kehstartir.Data.Contracts.Entities.Campaign", "Campaign")
                         .WithMany("Images")
-                        .HasForeignKey("CompanyId")
+                        .HasForeignKey("CampaignId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -586,9 +588,9 @@ namespace Kehstartir.Data.EntityFramework.Migrations
 
             modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.Post", b =>
                 {
-                    b.HasOne("Kehstartir.Data.Contracts.Entities.Company", "Company")
+                    b.HasOne("Kehstartir.Data.Contracts.Entities.Campaign", "Campaign")
                         .WithMany("Posts")
-                        .HasForeignKey("CompanyId")
+                        .HasForeignKey("CampaignId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Kehstartir.Data.Contracts.Entities.AspNetUsers", "User")
@@ -605,9 +607,9 @@ namespace Kehstartir.Data.EntityFramework.Migrations
 
             modelBuilder.Entity("Kehstartir.Data.Contracts.Entities.Rating", b =>
                 {
-                    b.HasOne("Kehstartir.Data.Contracts.Entities.Company", "Company")
+                    b.HasOne("Kehstartir.Data.Contracts.Entities.Campaign", "Campaign")
                         .WithOne("Rating")
-                        .HasForeignKey("Kehstartir.Data.Contracts.Entities.Rating", "CompanyId")
+                        .HasForeignKey("Kehstartir.Data.Contracts.Entities.Rating", "CampaignId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

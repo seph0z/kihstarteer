@@ -8,6 +8,6 @@ namespace Kehstartir.Data.Contracts.Entities
     {
         public int Id { get; set; }
         public string Text { get; set; }
-        public virtual ICollection<CompanyTag> CompanyTags { get; set; }
+        public virtual ICollection<CampaignTag> CampaignTags { get; set; }
     }
 }

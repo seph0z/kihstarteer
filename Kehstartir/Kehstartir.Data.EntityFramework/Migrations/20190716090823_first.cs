@@ -242,13 +242,14 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Companies",
+                name: "Campaigns",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
+                    Content = table.Column<string>(nullable: true),
                     VideoLink = table.Column<string>(nullable: true),
                     Amount = table.Column<double>(nullable: false),
                     ExpirationDate = table.Column<DateTime>(nullable: false),
@@ -257,15 +258,15 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Companies", x => x.Id);
+                    table.PrimaryKey("PK_Campaigns", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Companies_Themes_ThemeId",
+                        name: "FK_Campaigns_Themes_ThemeId",
                         column: x => x.ThemeId,
                         principalTable: "Themes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Companies_AspNetUsers_UserId",
+                        name: "FK_Campaigns_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -273,25 +274,49 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BonusCompanies",
+                name: "BonusCampaigns",
                 columns: table => new
                 {
                     BonusId = table.Column<int>(nullable: false),
-                    CompanyId = table.Column<int>(nullable: false)
+                    CampaignId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BonusCompanies", x => new { x.BonusId, x.CompanyId });
+                    table.PrimaryKey("PK_BonusCampaigns", x => new { x.BonusId, x.CampaignId });
                     table.ForeignKey(
-                        name: "FK_BonusCompanies_Bonuses_BonusId",
+                        name: "FK_BonusCampaigns_Bonuses_BonusId",
                         column: x => x.BonusId,
                         principalTable: "Bonuses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BonusCompanies_Companies_CompanyId",
-                        column: x => x.CompanyId,
-                        principalTable: "Companies",
+                        name: "FK_BonusCampaigns_Campaigns_CampaignId",
+                        column: x => x.CampaignId,
+                        principalTable: "Campaigns",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CampaignTags",
+                columns: table => new
+                {
+                    CampaignId = table.Column<int>(nullable: false),
+                    TagId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CampaignTags", x => new { x.CampaignId, x.TagId });
+                    table.ForeignKey(
+                        name: "FK_CampaignTags_Campaigns_CampaignId",
+                        column: x => x.CampaignId,
+                        principalTable: "Campaigns",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CampaignTags_Tags_TagId",
+                        column: x => x.TagId,
+                        principalTable: "Tags",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -305,15 +330,15 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                     Text = table.Column<string>(nullable: true),
                     Created = table.Column<DateTime>(nullable: false),
                     UserId = table.Column<string>(nullable: true),
-                    CompanyId = table.Column<int>(nullable: false)
+                    CampaignId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comments", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Comments_Companies_CompanyId",
-                        column: x => x.CompanyId,
-                        principalTable: "Companies",
+                        name: "FK_Comments_Campaigns_CampaignId",
+                        column: x => x.CampaignId,
+                        principalTable: "Campaigns",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -325,45 +350,21 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CompanyTags",
-                columns: table => new
-                {
-                    CompanyId = table.Column<int>(nullable: false),
-                    TagId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CompanyTags", x => new { x.CompanyId, x.TagId });
-                    table.ForeignKey(
-                        name: "FK_CompanyTags_Companies_CompanyId",
-                        column: x => x.CompanyId,
-                        principalTable: "Companies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CompanyTags_Tags_TagId",
-                        column: x => x.TagId,
-                        principalTable: "Tags",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Images",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ImagePath = table.Column<string>(nullable: true),
-                    CompanyId = table.Column<int>(nullable: false)
+                    CampaignId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Images", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Images_Companies_CompanyId",
-                        column: x => x.CompanyId,
-                        principalTable: "Companies",
+                        name: "FK_Images_Campaigns_CampaignId",
+                        column: x => x.CampaignId,
+                        principalTable: "Campaigns",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -377,16 +378,16 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                     Title = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     Content = table.Column<string>(nullable: true),
-                    CompanyId = table.Column<int>(nullable: false),
+                    CampaignId = table.Column<int>(nullable: false),
                     UserId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Posts", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Posts_Companies_CompanyId",
-                        column: x => x.CompanyId,
-                        principalTable: "Companies",
+                        name: "FK_Posts_Campaigns_CampaignId",
+                        column: x => x.CampaignId,
+                        principalTable: "Campaigns",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -405,15 +406,15 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Sum = table.Column<double>(nullable: false),
                     Count = table.Column<int>(nullable: false),
-                    CompanyId = table.Column<int>(nullable: false)
+                    CampaignId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Ratings", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Ratings_Companies_CompanyId",
-                        column: x => x.CompanyId,
-                        principalTable: "Companies",
+                        name: "FK_Ratings_Campaigns_CampaignId",
+                        column: x => x.CampaignId,
+                        principalTable: "Campaigns",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -532,14 +533,29 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BonusCompanies_CompanyId",
-                table: "BonusCompanies",
-                column: "CompanyId");
+                name: "IX_BonusCampaigns_CampaignId",
+                table: "BonusCampaigns",
+                column: "CampaignId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comments_CompanyId",
+                name: "IX_Campaigns_ThemeId",
+                table: "Campaigns",
+                column: "ThemeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Campaigns_UserId",
+                table: "Campaigns",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CampaignTags_TagId",
+                table: "CampaignTags",
+                column: "TagId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comments_CampaignId",
                 table: "Comments",
-                column: "CompanyId");
+                column: "CampaignId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_UserId",
@@ -547,24 +563,9 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Companies_ThemeId",
-                table: "Companies",
-                column: "ThemeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Companies_UserId",
-                table: "Companies",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CompanyTags_TagId",
-                table: "CompanyTags",
-                column: "TagId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Images_CompanyId",
+                name: "IX_Images_CampaignId",
                 table: "Images",
-                column: "CompanyId");
+                column: "CampaignId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_LikeAspNetUsers_UserId",
@@ -578,9 +579,9 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Posts_CompanyId",
+                name: "IX_Posts_CampaignId",
                 table: "Posts",
-                column: "CompanyId");
+                column: "CampaignId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Posts_UserId",
@@ -600,9 +601,9 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Ratings_CompanyId",
+                name: "IX_Ratings_CampaignId",
                 table: "Ratings",
-                column: "CompanyId",
+                column: "CampaignId",
                 unique: true);
         }
 
@@ -627,10 +628,10 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                 name: "BonusAspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "BonusCompanies");
+                name: "BonusCampaigns");
 
             migrationBuilder.DropTable(
-                name: "CompanyTags");
+                name: "CampaignTags");
 
             migrationBuilder.DropTable(
                 name: "Images");
@@ -666,7 +667,7 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                 name: "Comments");
 
             migrationBuilder.DropTable(
-                name: "Companies");
+                name: "Campaigns");
 
             migrationBuilder.DropTable(
                 name: "Themes");

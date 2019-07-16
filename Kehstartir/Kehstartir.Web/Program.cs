@@ -16,11 +16,8 @@ namespace Kehstartir.Web
     {
         public static void Main(string[] args)
         {
-            Mapper.Initialize(c => c.AddProfile(typeof(CompanyMappingProfile)));
+            Mapper.Initialize(c => c.AddProfile(typeof(CampaignMappingProfile)));
             CreateWebHostBuilder(args).Build().Run();
-            //int[] someArray = { 1, 2, 3, 4 };
-            //int[] someArray1;
-            //someArray1 = new int[] { 1, 2, 3, 4 };
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

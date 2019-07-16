@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Kehstartir.Data.Contracts.Entities
 {
-    public class CompanyTag
+    public class CampaignTag
     {
-        public int CompanyId { get; set; }
-        public virtual Company Company { get; set; }
+        public int CampaignId { get; set; }
+        public virtual Campaign Campaign { get; set; }
 
         public int TagId { get; set; }
         public virtual Tag Tag { get; set; }

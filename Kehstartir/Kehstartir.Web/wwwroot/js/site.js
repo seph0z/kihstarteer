@@ -8,4 +8,4 @@ $("#js-example-tags").select2({
     width: 'resolve'
 });
 
-var simplemde = new SimpleMDE({ element: document.getElementById("Description") });
+var simplemde = new SimpleMDE({ element: document.getElementById("Content") });

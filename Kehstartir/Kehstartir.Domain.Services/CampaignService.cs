@@ -9,32 +9,32 @@ using System.Text;
 
 namespace Kehstartir.Domain.Services
 {
-    public class CompanyService : ICompanyService
+    public class CampaignService : ICampaignService
     {
-        private readonly IRepository<Company> repository;
-        public CompanyService(IRepository<Company> repository)
+        private readonly IRepository<Campaign> repository;
+        public CampaignService(IRepository<Campaign> repository)
         {
             this.repository = repository;
         }
 
-        public void Add(CompanyViewModel companyViewModel)
+        public void Add(CampaignViewModel companyViewModel)
         {
-            var company = Mapper.Map<Company>(companyViewModel);
+            var company = Mapper.Map<Campaign>(companyViewModel);
             repository.Add(company);
             repository.SaveChanges();
         }
 
-        public CompanyViewModel Get(int id)
+        public CampaignViewModel Get(int id)
         {
-            Company company = repository.Get(id);
-            var result = Mapper.Map<CompanyViewModel>(company);
+            Campaign company = repository.Get(id);
+            var result = Mapper.Map<CampaignViewModel>(company);
             return result;
         }
 
-        public IEnumerable<CompanyViewModel> GetAll()
+        public IEnumerable<CampaignViewModel> GetAll()
         {
             var companies = repository.GetAll();
-            IEnumerable<CompanyViewModel> companyViewModels = Mapper.Map<IEnumerable<Company>, IEnumerable<CompanyViewModel>>(companies);
+            IEnumerable<CampaignViewModel> companyViewModels = Mapper.Map<IEnumerable<Campaign>, IEnumerable<CampaignViewModel>>(companies);
             return companyViewModels;
         }
 
@@ -44,9 +44,9 @@ namespace Kehstartir.Domain.Services
             repository.SaveChanges();
         }
 
-        public void Update(CompanyViewModel companyViewModel)
+        public void Update(CampaignViewModel companyViewModel)
         {
-            var company = Mapper.Map<Company>(companyViewModel);
+            var company = Mapper.Map<Campaign>(companyViewModel);
             repository.Update(company);
             repository.SaveChanges();
         }

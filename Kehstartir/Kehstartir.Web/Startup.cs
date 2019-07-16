@@ -50,7 +50,7 @@ namespace Kehstartir.Web
 
             services.AddScoped<EntitiesContext>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped<ICompanyService, CompanyService>();
+            services.AddScoped<ICampaignService, CampaignService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -10,8 +10,8 @@ namespace Kehstartir.Data.Contracts.Entities
         public double Sum { get; set; }
         public int Count { get; set; }
 
-        public int CompanyId { get; set; }
-        public virtual Company Company { get; set; }
+        public int CampaignId { get; set; }
+        public virtual Campaign Campaign { get; set; }
         public virtual ICollection<RatingAspNetUsers> RatingAspNetUsers { get; set; }
     }
 }
