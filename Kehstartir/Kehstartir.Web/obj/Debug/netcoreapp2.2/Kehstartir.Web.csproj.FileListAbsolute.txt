@@ -40,5 +40,5 @@ D:\Murashkevich\Repos\Kehstartir\Kehstartir.Web\bin\Debug\netcoreapp2.2\Kehstart
 D:\Murashkevich\Repos\Kehstartir\Kehstartir.Web\bin\Debug\netcoreapp2.2\Kehstartir.Domain.Contracts.pdb
 D:\Murashkevich\Repos\Kehstartir\Kehstartir.Web\bin\Debug\netcoreapp2.2\Kehstartir.Domain.Services.pdb
 D:\Murashkevich\Repos\Kehstartir\Kehstartir.Web\bin\Debug\netcoreapp2.2\Kehstartir.Infrastructure.pdb
-D:\Murashkevich\Repos\Kehstartir\Kehstartir.Web\obj\Debug\netcoreapp2.2\Razor\Views\Company\Create.g.cshtml.cs
 D:\Murashkevich\Repos\Kehstartir\Kehstartir.Web\obj\Debug\netcoreapp2.2\Razor\Views\Campaign\Create.g.cshtml.cs
+D:\Murashkevich\Repos\Kehstartir\Kehstartir.Web\obj\Debug\netcoreapp2.2\Razor\Views\Campaign\PreViewImage.g.cshtml.cs
