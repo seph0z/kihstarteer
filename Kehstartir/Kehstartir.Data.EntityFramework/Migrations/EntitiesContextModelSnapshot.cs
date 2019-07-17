@@ -239,6 +239,8 @@ namespace Kehstartir.Data.EntityFramework.Migrations
 
                     b.Property<string>("Title");
 
+                    b.Property<string>("TitleLogo");
+
                     b.Property<string>("UserId");
 
                     b.Property<string>("VideoLink");

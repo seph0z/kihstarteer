@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kehstartir.Data.EntityFramework.Migrations
 {
     [DbContext(typeof(EntitiesContext))]
-    [Migration("20190716090823_first")]
+    [Migration("20190717160444_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -240,6 +240,8 @@ namespace Kehstartir.Data.EntityFramework.Migrations
                     b.Property<int>("ThemeId");
 
                     b.Property<string>("Title");
+
+                    b.Property<string>("TitleLogo");
 
                     b.Property<string>("UserId");
 

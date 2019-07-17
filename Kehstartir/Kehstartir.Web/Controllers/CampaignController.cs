@@ -8,6 +8,7 @@ using Kehstartir.Domain.Contracts.ViewModels;
 using Kehstartir.Web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Kehstartir.Web.Controllers
 {
@@ -40,7 +41,18 @@ namespace Kehstartir.Web.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var camp = campaignService.Get(1);
+            var col = new List<SelectListItem>()
+            {
+                new SelectListItem{Text = "Games", Value = "Games" },
+                new SelectListItem{Text = "Clothes", Value = "Clothes" },
+                new SelectListItem{Text = "Electronics", Value = "Electronics" },
+                new SelectListItem{Text = "Food", Value = "Food" },
+                new SelectListItem{Text = "Films", Value = "Films" },
+                new SelectListItem{Text = "Music", Value = "Music" }
+            };
+            ViewBag.Select = col;
+            return View(camp);
         }
     }
 }

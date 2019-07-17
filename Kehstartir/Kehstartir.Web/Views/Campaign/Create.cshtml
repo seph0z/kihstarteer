@@ -7,6 +7,7 @@
 
 <h1>Create</h1>
 <hr />
+
 <form asp-action="Create">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="form-group">
@@ -14,6 +15,7 @@
         <input asp-for="Title" class="form-control" />
         <span asp-validation-for="Title" class="text-danger"></span>
     </div>
+    <hr style="width: initial;">
     <div class="form-group">
         <label asp-for="Description" class="control-label"></label>
         <textarea asp-for="Description" class="form-control"></textarea>
@@ -31,32 +33,36 @@
     </div>
     <div class="form-group">
         <label asp-for="ExpirationDate" class="control-label"></label>
-        <input asp-for="ExpirationDate" class="form-control" />
+        <input asp-for="ExpirationDate" type="date" class="form-control" />
         <span asp-validation-for="ExpirationDate" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Theme" class="control-label"></label>
-        <input asp-for="Theme" class="form-control" />
+        <select asp-for="Theme" asp-items="ViewBag.Select" class="form-control"></select>
         <span asp-validation-for="Theme" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Tags" class="control-label"></label>
         <select asp-for="Tags" id="js-example-tags" style="width: 100%" multiple="multiple" class="form-control">
-            <option>Loh</option>
-            <option>Pidor</option>
-            <option>Chmo</option>
+            @*<option>Loh</option>
+                <option>Pidor</option>
+                <option>Chmo</option>*@
         </select>
         <span asp-validation-for="Tags" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input asp-for="TitleLogo" type="text" id="logo" class="form-control" />
+        <span asp-validation-for="TitleLogo" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Content" class="control-label"></label>
         <textarea asp-for="Content" id="Content" class="form-control"></textarea>
         <span asp-validation-for="Content" class="text-danger"></span>
     </div>
-    @*<div id="update"></div>*@
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>
+    <div></div>
 </form>
 
 <form asp-action="PreViewImage" method="post" enctype="multipart/form-data"
@@ -65,13 +71,24 @@
       data-ajax-mode="replace"
       data-ajax-update="#update"
       data-ajax-loading="#spinner">
-    <div class="input-group mb-3">
+    @*<div class="input-group mb-3">
         <div class="input-group-prepend">
             <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon03">Upload</button>
         </div>
         <div class="custom-file">
             <input type="file" name="formFiles" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" multiple>
             <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+        </div>
+    </div>*@
+    <div id="update">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon03">Upload</button>
+            </div>
+            <div class="custom-file">
+                <input type="file" name="formFiles" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" multiple>
+                <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+            </div>
         </div>
     </div>
 </form>
@@ -81,5 +98,5 @@
         <span class="sr-only">Loading...</span>
     </div>
 </div>
-<div id="update"></div>
+@*<div id="update"></div>*@
 
