@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>aspnet-CourseProject.Web-9EDA465B-28F2-41CC-BDD8-0268F4172667</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\CourseProject.Data.Contracts\CourseProject.Data.Contracts.csproj" />
+    <ProjectReference Include="..\CourseProject.Data.EntityFramework\CourseProject.Data.EntityFramework.csproj" />
+    <ProjectReference Include="..\CourseProject.Domain.Contracts\CourseProject.Domain.Contracts.csproj" />
+    <ProjectReference Include="..\CourseProject.Domain.Services\CourseProject.Domain.Services.csproj" />
+    <ProjectReference Include="..\CourseProject.Infrastructure\CourseProject.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

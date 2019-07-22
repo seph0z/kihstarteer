@@ -33,7 +33,7 @@ namespace Kehstartir.Infrastructure.MappingProfiles
                 .ForMember(dest => dest.UserId, c => c.MapFrom(src => src.UserId))
                 //.ForMember(dest => dest.UserName, c => c.MapFrom(src => src.User.UserName))
                 .ForMember(dest => dest.Tags, c => c.MapFrom(src => src.CampaignTags))
-                .ForMember(dest => dest.Rating, c => c.MapFrom(src => src.Rating.Sum))
+                //.ForMember(dest => dest.Rating, c => c.MapFrom(src => src.Rating.Sum))
                 .ForAllOtherMembers(c => c.Ignore());
 
         }
@@ -53,7 +53,7 @@ namespace Kehstartir.Infrastructure.MappingProfiles
                 .ForMember(dest => dest.UserId, c => c.MapFrom(src => src.UserId))
                 //.ForPath(dest => dest.User.UserName, c => c.MapFrom(src => src.UserName))
                 .ForPath(dest => dest.CampaignTags, c => c.MapFrom(src => src.Tags))
-                .ForPath(dest => dest.Rating.Sum, c => c.MapFrom(src => src.Rating))
+                //.ForPath(dest => dest.Rating.Sum, c => c.MapFrom(src => src.Rating))
                 .ForAllOtherMembers(c => c.Ignore());
         }
 

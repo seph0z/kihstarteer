@@ -19,12 +19,6 @@ $(document).ready(function () {
         }
         else if (files.length == 1) {
             fileLabel.html(files[0].name);
-            //function CallCsharpcode() {
-            //    $.ajax({
-            //        type: "POST",
-
-            //    })
-            //}
         }
     });
 });

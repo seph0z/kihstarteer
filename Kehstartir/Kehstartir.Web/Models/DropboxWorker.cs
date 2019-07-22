@@ -11,7 +11,7 @@ namespace Kehstartir.Web.Models
 {
     public class DropboxWorker
     {
-        private readonly string token = "";
+        private readonly string token = "Xy9Lt27y39AAAAAAAAAAIBkbfHs01snb0dSSy-RqaXyzpQqeE-wfipejXPVLhxT0";
 
         public void Add(IFormFile formFile)
         {

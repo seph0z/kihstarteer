@@ -28,7 +28,8 @@ namespace Kehstartir.Web.Controllers
         public IActionResult Create(CampaignViewModel campaignViewModel)
         {
             campaignViewModel.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            campaignService.Add(campaignViewModel);
+            campaignViewModel.Id = 2;
+            campaignService.Update(campaignViewModel);
             return RedirectToAction("Index");
         }
 
@@ -41,18 +42,19 @@ namespace Kehstartir.Web.Controllers
 
         public IActionResult Create()
         {
-            var camp = campaignService.Get(1);
+            //campaignService.Remove(2);
+            //var camp = campaignService.Get(2);
             var col = new List<SelectListItem>()
             {
-                new SelectListItem{Text = "Games", Value = "Games" },
-                new SelectListItem{Text = "Clothes", Value = "Clothes" },
-                new SelectListItem{Text = "Electronics", Value = "Electronics" },
-                new SelectListItem{Text = "Food", Value = "Food" },
-                new SelectListItem{Text = "Films", Value = "Films" },
-                new SelectListItem{Text = "Music", Value = "Music" }
+                new SelectListItem{Text = "Games", Value = "1" },
+                new SelectListItem{Text = "Clothes", Value = "2" },
+                new SelectListItem{Text = "Electronics", Value = "3" },
+                new SelectListItem{Text = "Food", Value = "4", Selected = true },
+                new SelectListItem{Text = "Films", Value = "5" },
+                new SelectListItem{Text = "Music", Value = "6" }
             };
             ViewBag.Select = col;
-            return View(camp);
+            return View();
         }
     }
 }

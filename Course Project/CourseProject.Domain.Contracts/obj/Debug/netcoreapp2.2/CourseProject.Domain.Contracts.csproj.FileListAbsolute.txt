@@ -1,0 +1,9 @@
+D:\Murashkevich\Repos\Course Project\CourseProject.Domain.Contracts\bin\Debug\netcoreapp2.2\CourseProject.Domain.Contracts.deps.json
+D:\Murashkevich\Repos\Course Project\CourseProject.Domain.Contracts\bin\Debug\netcoreapp2.2\CourseProject.Domain.Contracts.dll
+D:\Murashkevich\Repos\Course Project\CourseProject.Domain.Contracts\bin\Debug\netcoreapp2.2\CourseProject.Domain.Contracts.pdb
+D:\Murashkevich\Repos\Course Project\CourseProject.Domain.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Domain.Contracts.csprojAssemblyReference.cache
+D:\Murashkevich\Repos\Course Project\CourseProject.Domain.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Domain.Contracts.csproj.CoreCompileInputs.cache
+D:\Murashkevich\Repos\Course Project\CourseProject.Domain.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Domain.Contracts.AssemblyInfoInputs.cache
+D:\Murashkevich\Repos\Course Project\CourseProject.Domain.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Domain.Contracts.AssemblyInfo.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Domain.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Domain.Contracts.dll
+D:\Murashkevich\Repos\Course Project\CourseProject.Domain.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Domain.Contracts.pdb

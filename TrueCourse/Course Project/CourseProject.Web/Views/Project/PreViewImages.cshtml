@@ -1,0 +1,24 @@
+﻿@using System.Collections.Generic
+@model List<string>
+
+<script>
+    var simplVal = simplemde.value();
+</script>
+
+<div class="row">
+    @foreach(var img in Model)
+    {
+        <script>
+            imageLinks += "\n![](@img)";
+        </script>
+        <div class="col-sm-3">
+            <img src="@img" id="imgs" class="mx-auto d-block" alt="Alternate Text" />
+        </div>
+    }
+</div>
+
+<script>
+    simplVal += imageLinks;
+    simplemde.value(simplVal);
+    imageLinks = "";
+</script>

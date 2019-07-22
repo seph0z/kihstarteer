@@ -28,7 +28,10 @@
     </div>
     <div class="form-group">
         <label asp-for="Amount" class="control-label"></label>
-        <input asp-for="Amount" type="number" class="form-control" />
+        @*<input asp-for="Amount" type="number" class="form-control" />*@
+        <select asp-for="Amount" asp-items="ViewBag.Select" class="form-control">
+            @*<option selected="selected">4</option>*@
+        </select>
         <span asp-validation-for="Amount" class="text-danger"></span>
     </div>
     <div class="form-group">

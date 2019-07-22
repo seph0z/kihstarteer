@@ -22,6 +22,7 @@ namespace Kehstartir.Domain.Contracts.ViewModels
         //public string[] Images { get; set; }
         //public string[] Bonuses { get; set; }
         //public string[] Posts { get; set; }
-        public double Rating { get; set; }
+        //public double Rating { get; set; }
+        //public int RatingId { get; set; }
     }
 }
