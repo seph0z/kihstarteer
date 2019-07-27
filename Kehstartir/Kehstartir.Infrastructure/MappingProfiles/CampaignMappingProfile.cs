@@ -15,7 +15,7 @@ namespace Kehstartir.Infrastructure.MappingProfiles
             MapCompanyToCompanyViewModel();
             MapCompanyViewModelToCompany();
             MapCompanyTagToString();
-            MapStringToCompanyTag();
+            //MapStringToCompanyTag();
         }
 
         private void MapCompanyToCompanyViewModel()
@@ -31,9 +31,7 @@ namespace Kehstartir.Infrastructure.MappingProfiles
                 .ForMember(dest => dest.ExpirationDate, c => c.MapFrom(src => src.ExpirationDate))
                 .ForMember(dest => dest.Theme, c => c.MapFrom(src => src.Theme.Name))
                 .ForMember(dest => dest.UserId, c => c.MapFrom(src => src.UserId))
-                //.ForMember(dest => dest.UserName, c => c.MapFrom(src => src.User.UserName))
                 .ForMember(dest => dest.Tags, c => c.MapFrom(src => src.CampaignTags))
-                //.ForMember(dest => dest.Rating, c => c.MapFrom(src => src.Rating.Sum))
                 .ForAllOtherMembers(c => c.Ignore());
 
         }
@@ -51,9 +49,7 @@ namespace Kehstartir.Infrastructure.MappingProfiles
                 .ForMember(dest => dest.ExpirationDate, c => c.MapFrom(src => src.ExpirationDate))
                 .ForPath(dest => dest.Theme.Name, c => c.MapFrom(src => src.Theme))
                 .ForMember(dest => dest.UserId, c => c.MapFrom(src => src.UserId))
-                //.ForPath(dest => dest.User.UserName, c => c.MapFrom(src => src.UserName))
-                .ForPath(dest => dest.CampaignTags, c => c.MapFrom(src => src.Tags))
-                //.ForPath(dest => dest.Rating.Sum, c => c.MapFrom(src => src.Rating))
+                //.ForPath(dest => dest.CampaignTags, c => c.MapFrom(src => src.Tags))
                 .ForAllOtherMembers(c => c.Ignore());
         }
 
@@ -63,21 +59,21 @@ namespace Kehstartir.Infrastructure.MappingProfiles
                 .ConvertUsing(new StringCampaignTagConverter());
         }
 
-        public void MapStringToCompanyTag()
-        {
-            CreateMap<string, CampaignTag>()
-                .ConvertUsing(new CampaignTagStringConverter());
+        //public void MapStringToCompanyTag()
+        //{
+        //    CreateMap<string, CampaignTag>()
+        //        .ConvertUsing(new CampaignTagStringConverter());
 
-        }
+        //}
     }
-    public class CampaignTagStringConverter : ITypeConverter<string, CampaignTag>
-    {
-        public CampaignTag Convert(string source, CampaignTag destination, ResolutionContext context)
-        {
-            var companyTag = new CampaignTag { Tag = new Tag { Text = source } };
-            return companyTag;
-        }
-    }
+    //public class CampaignTagStringConverter : ITypeConverter<string, CampaignTag>
+    //{
+    //    public CampaignTag Convert(string source, CampaignTag destination, ResolutionContext context)
+    //    {
+    //        var companyTag = new CampaignTag { Tag = new Tag { Text = source } };
+    //        return companyTag;
+    //    }
+    //}
 
     public class StringCampaignTagConverter : ITypeConverter<CampaignTag, string>
     {

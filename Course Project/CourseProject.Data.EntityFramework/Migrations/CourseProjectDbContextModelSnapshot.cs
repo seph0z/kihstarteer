@@ -191,6 +191,137 @@ namespace CourseProject.Data.EntityFramework.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Section = "Art"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Section = "Comics"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Section = "Crafts"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Section = "Dance"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Section = "Design"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Section = "Fashion"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Section = "Film & Video"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Section = "Food"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Section = "Games"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Section = "Journalism"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Section = "Music"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Section = "Photography"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Section = "Publishing"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Section = "Technology"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Section = "Theater"
+                        });
+                });
+
+            modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Content", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ProjectId");
+
+                    b.Property<string>("Text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId")
+                        .IsUnique();
+
+                    b.ToTable("Contents");
+                });
+
+            modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Path");
+
+                    b.Property<int>("ProjectId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("Image");
+                });
+
+            modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Profile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Image");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
+
+                    b.ToTable("Profiles");
                 });
 
             modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Project", b =>
@@ -201,7 +332,7 @@ namespace CourseProject.Data.EntityFramework.Migrations
 
                     b.Property<int>("CategoryId");
 
-                    b.Property<string>("Content");
+                    b.Property<double>("CurrentFunding");
 
                     b.Property<DateTime>("Duration");
 
@@ -224,6 +355,53 @@ namespace CourseProject.Data.EntityFramework.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("CourseProject.Data.Contracts.Entities.ProjectTag", b =>
+                {
+                    b.Property<int>("ProjectId");
+
+                    b.Property<int>("TagId");
+
+                    b.HasKey("ProjectId", "TagId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("ProjectTags");
+                });
+
+            modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Reward", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Amount");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("ProjectId");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("Rewards");
+                });
+
+            modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Tag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("CourseProject.Data.Contracts.Entities.AspNetRoleClaims", b =>
@@ -271,6 +449,29 @@ namespace CourseProject.Data.EntityFramework.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Content", b =>
+                {
+                    b.HasOne("CourseProject.Data.Contracts.Entities.Project", "Project")
+                        .WithOne("Content")
+                        .HasForeignKey("CourseProject.Data.Contracts.Entities.Content", "ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Image", b =>
+                {
+                    b.HasOne("CourseProject.Data.Contracts.Entities.Project", "Project")
+                        .WithMany("Images")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Profile", b =>
+                {
+                    b.HasOne("CourseProject.Data.Contracts.Entities.AspNetUsers", "User")
+                        .WithOne("Profile")
+                        .HasForeignKey("CourseProject.Data.Contracts.Entities.Profile", "UserId");
+                });
+
             modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Project", b =>
                 {
                     b.HasOne("CourseProject.Data.Contracts.Entities.Category", "Category")
@@ -281,6 +482,27 @@ namespace CourseProject.Data.EntityFramework.Migrations
                     b.HasOne("CourseProject.Data.Contracts.Entities.AspNetUsers", "User")
                         .WithMany("Projects")
                         .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("CourseProject.Data.Contracts.Entities.ProjectTag", b =>
+                {
+                    b.HasOne("CourseProject.Data.Contracts.Entities.Project", "Project")
+                        .WithMany("ProjectTags")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("CourseProject.Data.Contracts.Entities.Tag", "Tag")
+                        .WithMany("ProjectTags")
+                        .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Reward", b =>
+                {
+                    b.HasOne("CourseProject.Data.Contracts.Entities.Project", "Project")
+                        .WithMany("Rewards")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

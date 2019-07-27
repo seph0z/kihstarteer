@@ -7,3 +7,12 @@ D:\Murashkevich\Repos\Course Project\CourseProject.Data.Contracts\obj\Debug\netc
 D:\Murashkevich\Repos\Course Project\CourseProject.Data.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Data.Contracts.dll
 D:\Murashkevich\Repos\Course Project\CourseProject.Data.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Data.Contracts.pdb
 D:\Murashkevich\Repos\Course Project\CourseProject.Data.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Data.Contracts.csprojAssemblyReference.cache
+D:\Murashkevich\Visual Studio\Course Project\CourseProject.Data.Contracts\bin\Debug\netcoreapp2.2\CourseProject.Data.Contracts.deps.json
+D:\Murashkevich\Visual Studio\Course Project\CourseProject.Data.Contracts\bin\Debug\netcoreapp2.2\CourseProject.Data.Contracts.dll
+D:\Murashkevich\Visual Studio\Course Project\CourseProject.Data.Contracts\bin\Debug\netcoreapp2.2\CourseProject.Data.Contracts.pdb
+D:\Murashkevich\Visual Studio\Course Project\CourseProject.Data.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Data.Contracts.csprojAssemblyReference.cache
+D:\Murashkevich\Visual Studio\Course Project\CourseProject.Data.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Data.Contracts.csproj.CoreCompileInputs.cache
+D:\Murashkevich\Visual Studio\Course Project\CourseProject.Data.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Data.Contracts.AssemblyInfoInputs.cache
+D:\Murashkevich\Visual Studio\Course Project\CourseProject.Data.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Data.Contracts.AssemblyInfo.cs
+D:\Murashkevich\Visual Studio\Course Project\CourseProject.Data.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Data.Contracts.dll
+D:\Murashkevich\Visual Studio\Course Project\CourseProject.Data.Contracts\obj\Debug\netcoreapp2.2\CourseProject.Data.Contracts.pdb

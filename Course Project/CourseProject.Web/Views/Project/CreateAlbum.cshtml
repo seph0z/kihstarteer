@@ -1,0 +1,57 @@
+﻿@using System.Collections.Generic
+@model List<string>
+@{
+    ViewData["Title"] = "CreateAlbum";
+}
+
+<div id="headContent">
+    <br />
+    <h4>Picture gallery</h4>
+    <br />
+    <p>To make it easier for people to understand your project, add a gallery of pictures to it.</p>
+</div>
+
+<hr id="hara" />
+
+<form asp-action="PreViewAlbum" asp-route-id="@ViewBag.Id" method="post" enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-method="post"
+      data-ajax-mode="replace"
+      data-ajax-update="#updateAlbum"
+      data-ajax-loading="#spinner">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon03">Upload</button>
+        </div>
+        <div class="custom-file">
+            <input type="file" name="formFiles" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" multiple>
+            <label class="custom-file-label" for="inputGroupFile03">Drop an image here, or select a file.</label>
+        </div>
+    </div>
+</form>
+
+<div class="d-flex justify-content-center">
+    <div style="display:none;width: 3rem; height: 3rem;" id="spinner" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<div id="updateAlbum">
+    <div class="row">
+        @if (Model != null)
+        {
+            @foreach (var img in Model)
+            {
+                <div class="col-sm-6" style="margin-bottom:30px;">
+                    <img src="@img" id="imgs" class="mx-auto d-block" alt="Alternate Text" />
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<ul class="nav fixed-bottom border-top bg-white justify-content-end">
+    <li class="nav-item">
+        <a class="btn btn-success" id="btnNav" asp-controller="Project" asp-action="CreateMenu" asp-route-id="@ViewBag.Id">Save</a>
+    </li>
+</ul>

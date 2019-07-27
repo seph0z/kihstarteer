@@ -1,0 +1,11 @@
+﻿@using System.Collections.Generic
+@model List<string>
+
+<div class="row">
+    @foreach (var img in Model)
+    {
+        <div class="col-sm-6" style="margin-bottom:30px;">
+            <img src="@img" id="imgs" class="mx-auto d-block" alt="Alternate Text" />
+        </div>
+    }
+</div>

@@ -5,6 +5,7 @@ using CourseProject.Domain.Contracts;
 using CourseProject.Domain.Contracts.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CourseProject.Domain.Services
@@ -12,16 +13,23 @@ namespace CourseProject.Domain.Services
     public class ProjectService : IProjectService
     {
         private readonly IRepository<Project> _repository;
-        public ProjectService(IRepository<Project> repository)
+        private readonly IRepository<Tag> tagRepository;
+        public ProjectService(IRepository<Project> repository,
+            IRepository<Tag> tagRepository)
         {
             _repository = repository;
+            this.tagRepository = tagRepository;
         }
 
         public int Add(ProjectViewModel projectViewModel)
         {
+
             var project = Mapper.Map<Project>(projectViewModel);
             _repository.Add(project);
             _repository.SaveChanges();
+
+            AddTags(projectViewModel.Tags, project.Id);
+            
             return project.Id;
         }
 
@@ -45,11 +53,41 @@ namespace CourseProject.Domain.Services
             _repository.SaveChanges();
         }
 
-        public void Update(ProjectViewModel projectViewModel)
+        public int Update(ProjectViewModel projectViewModel)
         {
             var project = Mapper.Map<Project>(projectViewModel);
             _repository.Update(project);
             _repository.SaveChanges();
+
+            //UpdateTags(projectViewModel.Tags, project.Id);
+
+            return project.Id;
+        }
+
+        private void AddTags(string[] tags, int projectId)
+        {
+            foreach (var tag in tags)
+            {
+                if (tagRepository.GetAll().ToList().Find(x => x.Text == tag) == null)
+                {
+                    tagRepository.Add(new Tag
+                    {
+                        Text = tag,
+                        ProjectTags = new List<ProjectTag>
+                        {
+                            new ProjectTag {ProjectId = projectId}
+                        }
+                    });
+                }
+                else
+                {
+                    var tagAdd = tagRepository.GetAll().ToList().Find(x => x.Text == tag);
+                    tagAdd.ProjectTags.Add(new ProjectTag { ProjectId = projectId });
+                    tagRepository.Update(tagAdd);
+                    tagRepository.SaveChanges();
+                }
+            }
+            tagRepository.SaveChanges();
         }
     }
 }

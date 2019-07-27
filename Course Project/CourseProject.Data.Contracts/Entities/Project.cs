@@ -11,9 +11,10 @@ namespace CourseProject.Data.Contracts.Entities
         public string Subtitle { get; set; }
         public string Image { get; set; }
         public string Video { get; set; }
+        public double CurrentFunding { get; set; }
         public double Funding { get; set; }
         public DateTime Duration { get; set; }
-        public string Content { get; set; }
+        public virtual Content Content { get; set; }
 
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
@@ -21,5 +22,8 @@ namespace CourseProject.Data.Contracts.Entities
         public string UserId { get; set; }
         public virtual AspNetUsers User { get; set; }
 
+        public virtual ICollection<Image> Images { get; set; }
+        public virtual ICollection<Reward> Rewards { get; set; }
+        public virtual ICollection<ProjectTag> ProjectTags { get; set; }
     }
 }

@@ -48,6 +48,12 @@ namespace CourseProject.Web
             services.AddScoped<CourseProjectDbContext>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IProjectService, ProjectService>();
+            services.AddScoped<IContentService, ContentService>();
+            services.AddScoped<IImageService, ImageService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IRewardService, RewardService>();
+            services.AddScoped<IShowProjectService, ShowProjectService>();
+            services.AddScoped<IProfileService, ProfileService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

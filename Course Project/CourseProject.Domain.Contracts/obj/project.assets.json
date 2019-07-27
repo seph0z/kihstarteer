@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj",
+      "projectUniqueName": "D:\\Murashkevich\\Visual Studio\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj",
       "projectName": "CourseProject.Domain.Contracts",
-      "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj",
+      "projectPath": "D:\\Murashkevich\\Visual Studio\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Contracts\\obj\\",
+      "outputPath": "D:\\Murashkevich\\Visual Studio\\Course Project\\CourseProject.Domain.Contracts\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

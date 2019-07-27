@@ -28,8 +28,8 @@ namespace Kehstartir.Web.Controllers
         public IActionResult Create(CampaignViewModel campaignViewModel)
         {
             campaignViewModel.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            campaignViewModel.Id = 2;
-            campaignService.Update(campaignViewModel);
+            //campaignViewModel.Id = 2;
+            campaignService.Add(campaignViewModel);
             return RedirectToAction("Index");
         }
 

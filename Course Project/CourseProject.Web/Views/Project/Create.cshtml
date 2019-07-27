@@ -1,0 +1,163 @@
+﻿@model CourseProject.Domain.Contracts.ViewModels.ProjectViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div id="headContent">
+    <br />
+    <h4>Start with the basics</h4>
+    <br />
+    <p>Make it easy for people to learn about your project.</p>
+</div>
+
+<hr id="hara" />
+
+<div class="row">
+    <div class="col-sm-5">
+        <p style="font-size: 20px;">Project image</p>
+        <p style="font-weight:lighter">Add an image that clearly represents your project.</p>
+        <p style="font-weight:lighter">Choose one that looks good at different sizes. It will appear in different sizes in different places: on your project page.</p>
+    </div>
+    <div class="col-sm-7">
+        <form asp-action="PreViewImage" method="post" enctype="multipart/form-data"
+              data-ajax="true"
+              data-ajax-method="post"
+              data-ajax-mode="replace"
+              data-ajax-update="#updateProject"
+              data-ajax-loading="#spinner">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon03">Upload</button>
+                </div>
+                <div class="custom-file">
+                    <input type="file" name="formFiles" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" multiple>
+                    <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+                </div>
+            </div>
+        </form>
+        <div class="d-flex justify-content-center">
+            <div style="display:none;width: 3rem; height: 3rem;" id="spinner" class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <div id="updateProject">
+            @if (@Model != null)
+            {
+                <img src="@Model.Image" id="imgs" class="mx-auto d-block" alt="Alternate Text" />
+            }
+        </div>
+    </div>
+</div>
+
+<hr id="hara" />
+
+<form asp-action="Create">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input asp-for="Id" hidden class="form-control" />
+    <input asp-for="Image" hidden id="uploadImage" class="form-control" />
+    <input asp-for="UserId" hidden class="form-control" />
+    <input asp-for="CurrentFunding" hidden class="form-control" />
+
+    <div class="row">
+        <div class="col-sm-5">
+            <p style="font-size: 20px;">Project title</p>
+            <p style="font-weight:lighter">Write a clear, brief title that helps people quickly understand the gist of your project.</p>
+        </div>
+        <div class="col-sm-7">
+            <p>Title</p>
+            <input asp-for="Title" placeholder="Enter company name" class="form-control" />
+            <br />
+            <p>Subtitle</p>
+            <textarea asp-for="Subtitle" placeholder="Сompany description" class="form-control"></textarea>
+        </div>
+    </div>
+
+    <hr id="hara" />
+
+    <div class="row">
+        <div class="col-sm-5">
+            <p style="font-size: 20px;">Project category</p>
+            <p style="font-weight:lighter">Choose the category that most closely align with your project.</p>
+        </div>
+        <div class="col-sm-7">
+            <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-control">
+                <option selected="selected" disabled="disabled">Categories</option>
+            </select>
+        </div>
+    </div>
+
+    <hr id="hara" />
+
+    <div class="row">
+        <div class="col-sm-5">
+            <p style="font-size: 20px;">Project video</p>
+            <p style="font-weight:lighter">Add a video that describes your project.</p>
+            <p style="font-weight:lighter">Tell people what you’re raising funds to do, how you plan to make it happen, who you are, and why you care about this project.</p>
+        </div>
+        <div class="col-sm-7">
+            <p>Link to video</p>
+            <input asp-for="Video" placeholder="Insert a link to a video from youtube" class="form-control" />
+        </div>
+    </div>
+
+    <hr id="hara" />
+
+    <div class="row">
+        <div class="col-sm-5">
+            <p style="font-size: 20px;">Funding goal</p>
+            <p style="font-weight:lighter">Set your achievable goal.</p>
+            <p style="font-weight:lighter">Funding is all-or-nothing. If you don’t meet your goal, you won’t receive any money.</p>
+        </div>
+        <div class="col-sm-7">
+            <p>Goal amount</p>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                </div>
+                <input asp-for="Funding" type="number" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <hr id="hara" />
+
+    <div class="row" style="margin-bottom: 100px;">
+        <div class="col-sm-5">
+            <p style="font-size: 20px;">Campaign duration</p>
+            <p style="font-weight:lighter">Set a time limit for your campaign. You won’t be able to change this after you launch.</p>
+        </div>
+        <div class="col-sm-7">
+            <p>End on a specific date</p>
+            <input asp-for="Duration" type="date" class="form-control" />
+        </div>
+    </div>
+
+    <hr id="hara" />
+
+    <div class="row" style="margin-bottom: 100px;">
+        <div class="col-sm-5">
+            <p style="font-size: 20px;">Campaign tags</p>
+            <p style="font-weight:lighter">Set a few keywords to make it easier for people to find your campaign..</p>
+        </div>
+        <div class="col-sm-7">
+            <p>Enter tags</p>
+            <select asp-for="Tags" id="js-example-tags" style="width: 100%" multiple="multiple" class="form-control">
+                @if (Model != null)
+                {
+                    @foreach (var tag in Model.Tags)
+                    {
+                        <option selected="selected">@tag</option>
+                    }
+                }
+            </select>
+        </div>
+    </div>
+
+    <ul class="nav fixed-bottom border-top bg-white justify-content-end">
+        <li class="nav-item">
+            <button class="btn btn-success" id="btnNav" type="submit">Save</button>
+        </li>
+    </ul>
+</form>

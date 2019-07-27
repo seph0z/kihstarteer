@@ -1,0 +1,43 @@
+﻿@using System.Collections.Generic
+@model IEnumerable<CourseProject.Domain.Contracts.ViewModels.RewardViewModel>
+@*@{
+    ViewData["Title"] = "CreateRewards";
+}*@
+
+<div id="headContent">
+    <br />
+    <h4>Introduce your project</h4>
+    <br />
+    <p>Tell people why they should be excited about your project. Get specific but be clear and be brief.</p>
+</div>
+
+<hr id="hara" />
+
+<div class="row">
+    <div class="col-sm-10">
+        <div style="font-size: 25px;">Rewards</div>
+        It's good to provide a range of prices but not too many options.
+    </div>
+    <div class="col-sm-2">
+        <a 
+           data-ajax="true"
+        asp-controller="Project"
+        asp-action="AddReward"
+        asp-route-id="@ViewBag.Id"
+        data-ajax-update="#viewReward"
+        data-ajax-mode="replace"
+        class="btn btn-dark"
+           >+ Add a reward</a>
+    </div>
+</div>
+
+<div id="panel" style="
+    margin-bottom: 100px;
+    margin-top: 50px;">
+    @if(Model != null)
+    {
+        <partial name="ShowRewards" for="@Model"></partial>
+    }
+
+    <div id="viewReward" ></div>
+</div>

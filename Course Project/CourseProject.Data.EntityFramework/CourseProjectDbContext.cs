@@ -1,5 +1,6 @@
 ﻿using CourseProject.Data.Contracts.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace CourseProject.Data.EntityFramework
 {
@@ -24,6 +25,11 @@ namespace CourseProject.Data.EntityFramework
 
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
+        public virtual DbSet<Content> Contents { get; set; }
+        public virtual DbSet<Reward> Rewards { get; set; }
+        public virtual DbSet<Tag> Tags { get; set; }
+        public virtual DbSet<ProjectTag> ProjectTags { get; set; }
+        public virtual DbSet<Profile> Profiles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -139,6 +145,10 @@ namespace CourseProject.Data.EntityFramework
                 entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
 
                 entity.Property(e => e.UserName).HasMaxLength(256);
+
+                entity.HasOne(d => d.Profile)
+                .WithOne(p => p.User)
+                .HasForeignKey<Profile>(d => d.UserId);
             });
 
             modelBuilder.Entity<Project>(entity =>
@@ -150,6 +160,42 @@ namespace CourseProject.Data.EntityFramework
                 entity.HasOne(d => d.User)
                 .WithMany(p => p.Projects)
                 .HasForeignKey(d => d.UserId);
+
+                entity.HasMany(d => d.Images)
+                .WithOne(p => p.Project)
+                .HasForeignKey(d => d.ProjectId);
+            });
+
+            modelBuilder.Entity<ProjectTag>(entity =>
+            {
+                entity.HasKey(sc => new { sc.ProjectId, sc.TagId });
+
+                entity.HasOne(d => d.Project)
+                .WithMany(p => p.ProjectTags)
+                .HasForeignKey(d => d.ProjectId);
+
+                entity.HasOne(d => d.Tag)
+                .WithMany(p => p.ProjectTags)
+                .HasForeignKey(d => d.TagId);
+            });
+
+            modelBuilder.Entity<Category>().HasData(new List<Category>
+            {
+                new Category { Id = 1, Section = "Art"},
+                new Category { Id = 2,Section = "Comics"},
+                new Category { Id = 3,Section = "Crafts"},
+                new Category { Id = 4,Section = "Dance"},
+                new Category { Id = 5,Section = "Design"},
+                new Category { Id = 6,Section = "Fashion"},
+                new Category { Id = 7,Section = "Film & Video"},
+                new Category { Id = 8,Section = "Food"},
+                new Category { Id = 9,Section = "Games"},
+                new Category { Id = 10,Section = "Journalism"},
+                new Category { Id = 11,Section = "Music"},
+                new Category { Id = 12,Section = "Photography"},
+                new Category { Id = 13,Section = "Publishing"},
+                new Category { Id = 14,Section = "Technology"},
+                new Category { Id = 15,Section = "Theater"}
             });
         }
     }

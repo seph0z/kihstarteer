@@ -35,5 +35,6 @@ namespace CourseProject.Data.Contracts.Entities
         public virtual ICollection<AspNetUserTokens> AspNetUserTokens { get; set; }
 
         public virtual ICollection<Project> Projects { get; set; }
+        public virtual Profile Profile { get; set; }
     }
 }

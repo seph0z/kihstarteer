@@ -18,6 +18,11 @@ namespace CourseProject.Data.EntityFramework
             var dbSet = _dbContext.Set<T>();
             dbSet.Add(entity);
         }
+        public void AddRange(IEnumerable<T> entities)
+        {
+            var dbSet = _dbContext.Set<T>();
+            dbSet.AddRange(entities);
+        }
 
         public T Get(int id)
         {
@@ -36,6 +41,12 @@ namespace CourseProject.Data.EntityFramework
             var dbSet = _dbContext.Set<T>();
             var entity = dbSet.Find(id);
             dbSet.Remove(entity);
+        }
+
+        public void RemoveRange(IEnumerable<T> entities)
+        {
+            var dbSet = _dbContext.Set<T>();
+            _dbContext.RemoveRange(entities);
         }
 
         public void SaveChanges()

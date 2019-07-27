@@ -4916,11 +4916,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj",
+      "projectUniqueName": "D:\\Murashkevich\\Visual Studio\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj",
       "projectName": "CourseProject.Data.EntityFramework",
-      "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj",
+      "projectPath": "D:\\Murashkevich\\Visual Studio\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.EntityFramework\\obj\\",
+      "outputPath": "D:\\Murashkevich\\Visual Studio\\Course Project\\CourseProject.Data.EntityFramework\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4939,8 +4939,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj": {
-              "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj"
+            "D:\\Murashkevich\\Visual Studio\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj": {
+              "projectPath": "D:\\Murashkevich\\Visual Studio\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj"
             }
           }
         }

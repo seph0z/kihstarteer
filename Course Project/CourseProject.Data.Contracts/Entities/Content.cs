@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CourseProject.Data.Contracts.Entities
 {
-    class Content
+    public class Content
     {
         public int Id { get; set; }
         public string Text { get; set; }

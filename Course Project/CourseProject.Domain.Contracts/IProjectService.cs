@@ -11,6 +11,6 @@ namespace CourseProject.Domain.Contracts
         IEnumerable<ProjectViewModel> GetAll();
         int Add(ProjectViewModel projectViewModel);
         void Remove(int id);
-        void Update(ProjectViewModel projectViewModel);
+        int Update(ProjectViewModel projectViewModel);
     }
 }

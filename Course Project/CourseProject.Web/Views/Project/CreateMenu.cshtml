@@ -1,0 +1,49 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "CreateMenu";
+}
+
+<div id="headMenu">
+    <h3>@ViewBag.Category Project</h3>
+    <p>by @User.Identity.Name</p>
+</div>
+<hr id="hara" />
+<p style="font-size: 25px;">Project overview</p>
+<div class="card">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <a asp-controller="Project" asp-action="Create" asp-route-id="@Model" id="menuHref">
+                <div style="font-size: 25px;">Basic</div>
+                <p style="font-weight:lighter">Name your project, upload an image or video, and estabilish your campaign details</p>
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Project" asp-action="CreateContent" asp-route-id="@Model" id="menuHref">
+                <div style="font-size: 25px;">Story</div>
+                <p style="font-weight:lighter">Add a detailed project description and convey your risks and challenges</p>
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Project" asp-action="CreateRewards" asp-route-id="@Model" id="menuHref">
+                <div style="font-size: 25px;">Rewards</div>
+                <p style="font-weight:lighter">Set your rewards and shipping costs</p>
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a asp-controller="Project" asp-action="CreateAlbum" asp-route-id="@Model" id="menuHref">
+                <div style="font-size: 25px;">Album</div>
+                <p style="font-weight:lighter">Add an album to your project</p>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<br />
+<br />
+<a asp-controller="Show" asp-action="Get" asp-route-id="@Model" id="delete">Show project</a>
+
+<br />
+<br />
+
+<a asp-controller="Project" asp-action="Remove" asp-route-id="@Model" id="delete">Delete project</a>

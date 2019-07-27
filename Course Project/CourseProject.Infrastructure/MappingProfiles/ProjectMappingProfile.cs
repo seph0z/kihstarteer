@@ -11,6 +11,7 @@ namespace CourseProject.Infrastructure.MappingProfiles
         {
             MapProjectToProjectViewModel();
             MapProjectViewModelToProject();
+            MapProjectTagToString();
         }
 
         private void MapProjectToProjectViewModel()
@@ -21,11 +22,12 @@ namespace CourseProject.Infrastructure.MappingProfiles
                 .ForMember(dest => dest.Subtitle, c => c.MapFrom(src => src.Subtitle))
                 .ForMember(dest => dest.Image, c => c.MapFrom(src => src.Image))
                 .ForMember(dest => dest.Video, c => c.MapFrom(src => src.Video))
-                .ForMember(dest => dest.Content, c => c.MapFrom(src => src.Content))
+                .ForMember(dest => dest.CurrentFunding, c => c.MapFrom(src => src.CurrentFunding))
                 .ForMember(dest => dest.Funding, c => c.MapFrom(src => src.Funding))
                 .ForMember(dest => dest.Duration, c => c.MapFrom(src => src.Duration))
                 .ForMember(dest => dest.UserId, c => c.MapFrom(src => src.UserId))
-                .ForMember(dest => dest.Category, c => c.MapFrom(src => src.Category.Section))
+                .ForMember(dest => dest.CategoryId, c => c.MapFrom(src => src.CategoryId))
+                .ForMember(dest => dest.Tags, c => c.MapFrom(src => src.ProjectTags))
                 .ForAllOtherMembers(c => c.Ignore());
         }
 
@@ -37,12 +39,25 @@ namespace CourseProject.Infrastructure.MappingProfiles
                 .ForMember(dest => dest.Subtitle, c => c.MapFrom(src => src.Subtitle))
                 .ForMember(dest => dest.Image, c => c.MapFrom(src => src.Image))
                 .ForMember(dest => dest.Video, c => c.MapFrom(src => src.Video))
-                .ForMember(dest => dest.Content, c => c.MapFrom(src => src.Content))
                 .ForMember(dest => dest.Funding, c => c.MapFrom(src => src.Funding))
                 .ForMember(dest => dest.Duration, c => c.MapFrom(src => src.Duration))
                 .ForMember(dest => dest.UserId, c => c.MapFrom(src => src.UserId))
-                .ForPath(dest => dest.Category.Section, c => c.MapFrom(src => src.Category))
+                .ForPath(dest => dest.CategoryId, c => c.MapFrom(src => src.CategoryId))
                 .ForAllOtherMembers(c => c.Ignore());
+        }
+
+        public void MapProjectTagToString()
+        {
+            CreateMap<ProjectTag, string>()
+                .ConvertUsing(new StringProjectTagConverter());
+        }
+    }
+
+    public class StringProjectTagConverter : ITypeConverter<ProjectTag, string>
+    {
+        public string Convert(ProjectTag source, string destination, ResolutionContext context)
+        {
+            return source.Tag.Text;
         }
     }
 }

@@ -1,0 +1,58 @@
+﻿@model CourseProject.Domain.Contracts.ViewModels.RewardViewModel
+
+<script>scrollRewardUpdate();</script>
+
+<div style="font-size: 22px; margin-top:65px;">Edit your reward</div>
+<div style="margin-bottom:65px;" id="scrollUpdate">Make sure your rewards are just right. After a backer has selected a reward, you can't edit it.</div>
+
+<form asp-action="UpdateReward" method="post"
+      data-ajax="true"
+      data-ajax-method="post"
+      data-ajax-mode="replace"
+      data-ajax-update="#panel">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input asp-for="ProjectId" hidden class="form-control" />
+    <input asp-for="Id" hidden class="form-control" />
+
+    <div style="font-size: 22px; margin-bottom: 10px;">Title</div>
+    <div style="margin-bottom: 15px;">Briefly describe this reward.</div>
+    <input asp-for="Title" placeholder="Come up with an interesting title." class="form-control" />
+
+    <hr id="hara" />
+
+    <div style="font-size: 22px; margin-bottom: 10px;">Pledge amount</div>
+    <div style="margin-bottom: 15px;">Set a minimum pledge amount for this reward.</div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+        </div>
+        <input asp-for="Amount" type="number" class="form-control" />
+    </div>
+
+    <hr id="hara" />
+
+    <div style="font-size: 22px; margin-bottom: 10px;">Description</div>
+    <div style="margin-bottom: 15px;">Describe this reward in more detail.</div>
+    <textarea asp-for="Description" placeholder="The description should be simple and succinct." class="form-control"></textarea>
+
+    <ul class="nav fixed-bottom border-top bg-white justify-content-end">
+        <li class="nav-item">
+            <a data-ajax="true"
+               data-ajax-update="#panel"
+               data-ajax-mode="replace"
+               asp-controller="Project"
+               asp-action="ShowRewards"
+               asp-route-id="@Model.ProjectId"
+               class="btn btn btn-dark"
+               id="btnNav">
+                Сancel
+            </a>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-success" id="btnNav" type="submit">Save</button>
+        </li>
+    </ul>
+</form>
+

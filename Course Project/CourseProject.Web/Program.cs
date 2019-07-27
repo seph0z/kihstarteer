@@ -16,7 +16,14 @@ namespace CourseProject.Web
     {
         public static void Main(string[] args)
         {
-            Mapper.Initialize(c => c.AddProfile(typeof(ProjectMappingProfile)));
+            Mapper.Initialize(c => c.AddProfiles(typeof(ProjectMappingProfile)
+                , typeof(ContentMappingProfile)
+                , typeof(ImageMappingProfile)
+                , typeof(CategoryMappingProfile)
+                , typeof(ImageMappingProfile)
+                , typeof(RewardMappingProfile)
+                , typeof(ShowProjectMappingProfile)
+                , typeof(ProfileMappingProfile)));
             CreateWebHostBuilder(args).Build().Run();
         }
 
