@@ -1,0 +1,14 @@
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\bin\Release\netcoreapp2.2\CourseProject.Data.EntityFramework.deps.json
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\bin\Release\netcoreapp2.2\CourseProject.Data.EntityFramework.runtimeconfig.json
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\bin\Release\netcoreapp2.2\CourseProject.Data.EntityFramework.runtimeconfig.dev.json
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\bin\Release\netcoreapp2.2\CourseProject.Data.EntityFramework.dll
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\bin\Release\netcoreapp2.2\CourseProject.Data.EntityFramework.pdb
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\bin\Release\netcoreapp2.2\CourseProject.Data.Contracts.dll
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\bin\Release\netcoreapp2.2\CourseProject.Data.Contracts.pdb
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\obj\Release\netcoreapp2.2\CourseProject.Data.EntityFramework.csprojAssemblyReference.cache
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\obj\Release\netcoreapp2.2\CourseProject.Data.EntityFramework.csproj.CoreCompileInputs.cache
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\obj\Release\netcoreapp2.2\CourseProject.Data.EntityFramework.AssemblyInfoInputs.cache
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\obj\Release\netcoreapp2.2\CourseProject.Data.EntityFramework.AssemblyInfo.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\obj\Release\netcoreapp2.2\CourseProject.Data.EntityFramework.csproj.CopyComplete
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\obj\Release\netcoreapp2.2\CourseProject.Data.EntityFramework.dll
+D:\Murashkevich\Repos\Course Project\CourseProject.Data.EntityFramework\obj\Release\netcoreapp2.2\CourseProject.Data.EntityFramework.pdb

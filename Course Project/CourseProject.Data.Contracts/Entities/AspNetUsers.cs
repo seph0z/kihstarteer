@@ -29,12 +29,15 @@ namespace CourseProject.Data.Contracts.Entities
         public bool LockoutEnabled { get; set; }
         public int AccessFailedCount { get; set; }
 
+        public string Image { get; set; }
+        public string Biography { get; set; }
+        public string Country { get; set; }
+
         public virtual ICollection<AspNetUserClaims> AspNetUserClaims { get; set; }
         public virtual ICollection<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual ICollection<AspNetUserRoles> AspNetUserRoles { get; set; }
         public virtual ICollection<AspNetUserTokens> AspNetUserTokens { get; set; }
 
         public virtual ICollection<Project> Projects { get; set; }
-        public virtual Profile Profile { get; set; }
     }
 }

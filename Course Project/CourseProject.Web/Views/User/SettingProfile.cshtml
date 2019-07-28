@@ -1,0 +1,96 @@
+﻿@model CourseProject.Domain.Contracts.ViewModels.UserViewModel
+
+<div id="headContent">
+    <br />
+    <h2>Settings</h2>
+</div>
+
+<hr id="hara" />
+
+<div class="row">
+    <div class="col-sm-5">
+        <p style="font-size: 20px;">Profile image</p>
+    </div>
+    <div class="col-7">
+        <form asp-action="ProfileImage" method="post" enctype="multipart/form-data"
+              data-ajax="true"
+              data-ajax-method="post"
+              data-ajax-mode="replace"
+              data-ajax-update="#updateImage"
+              data-ajax-loading="#spinner">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon03">Upload</button>
+                </div>
+                <div class="custom-file">
+                    <input type="file" name="formFiles" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" multiple>
+                    <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+                </div>
+            </div>
+        </form>
+        <div class="d-flex justify-content-center">
+            <div style="display:none;width: 3rem; height: 3rem;" id="spinner" class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div id="updateImage">
+                @if (Model.Image == null)
+                {
+                    <img src="https://www.meme-arsenal.com/memes/63f058814afac6147b09c2f9e6858e6c.jpg" id="addImageProfile">
+                }
+                else
+                {
+                    <img src="@Model.Image" id="addImageProfile">
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr id="hara" />
+
+<form asp-action="SettingProfile">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input asp-for="Id" hidden="hidden" class="form-control" />
+    <input asp-for="Image" hidden="hidden" id="imagePath" class="form-control" />
+
+    <div class="row">
+        <div class="col-sm-5">
+            <p style="font-size: 20px;">Name</p>
+        </div>
+        <div class="col-sm-7">
+            <input asp-for="Name" readonly="readonly" placeholder="Insert a link to a video from youtube" class="form-control" />
+        </div>
+    </div>
+
+    <hr id="hara" />
+
+    <div class="row">
+        <div class="col-sm-5">
+            <p style="font-size: 20px;">Biography</p>
+        </div>
+        <div class="col-sm-7">
+            <textarea asp-for="Biography" placeholder="Tell us about yourself" class="form-control"></textarea>
+        </div>
+    </div>
+
+    <hr id="hara" />
+
+    <div class="row" style="margin-bottom: 100px;">
+        <div class="col-sm-5">
+            <p style="font-size: 20px;">Country</p>
+        </div>
+        <div class="col-sm-7">
+            <input asp-for="Country" placeholder="Your country" class="form-control" />
+        </div>
+    </div>
+
+    <ul class="nav fixed-bottom border-top bg-white justify-content-end">
+        <li class="nav-item">
+            <button class="btn btn-success" id="btnNav" type="submit">Save</button>
+        </li>
+    </ul>
+</form>
+

@@ -1,14 +1,36 @@
-﻿@model CourseProject.Domain.Contracts.ViewModels.ProfileViewModel
+﻿@model CourseProject.Domain.Contracts.ViewModels.UserViewModel
 
 
 
-    <div class="row">
-        <div class="col">
-            111111111111111111111111111111111111
-            11111111111111111111111111111111111111111111111111111
-        </div>
-        <div class="col">
-            2111111111111111111111111111111111111
-            11111111111111111111111111111111111111111111111111111
-        </div>
+
+<div class="row justify-content-center" style="margin-top:150px;">
+    @if (Model.Image == null)
+    {
+    <img src="https://www.meme-arsenal.com/memes/63f058814afac6147b09c2f9e6858e6c.jpg" id="addImageProfile">
+    }
+    else
+    {
+    <img src="@Model.Image" id="addImageProfile">
+    }
+</div>
+
+<div class="row justify-content-center" style="margin-top:20px;">
+    <div style="font-size:40px;">@Model.Name</div>
+</div>
+
+
+@if(Model.Biography != null)
+{
+<div class="row justify-content-center" style="margin-top:20px;">
+    <div>About me: @Model.Biography</div>
+</div>
+}
+
+<div class="row justify-content-center" style="margin-top:20px;">
+    <div class="col-2">
+        <a class="btn btn-secondary btn-block" asp-controller="User" asp-action="SettingProfile" asp-route-id="@Model.Id">Profile setting</a>
     </div>
+    <div class="col-2">
+        <a class="btn btn-success btn-block" asp-controller="User" asp-action="UserCampaigns" asp-route-id="@Model.Id">My campaigns</a>
+    </div>
+</div>

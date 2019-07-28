@@ -8,7 +8,11 @@
     <h3>@ViewBag.Category Project</h3>
     <p>by @User.Identity.Name</p>
 </div>
+
+<a asp-controller="Show" asp-action="Get" asp-route-id="@Model" class="btn btn-dark" >Show project</a>
+
 <hr id="hara" />
+
 <p style="font-size: 25px;">Project overview</p>
 <div class="card">
     <ul class="list-group list-group-flush">
@@ -41,9 +45,5 @@
 
 <br />
 <br />
-<a asp-controller="Show" asp-action="Get" asp-route-id="@Model" id="delete">Show project</a>
 
-<br />
-<br />
-
-<a asp-controller="Project" asp-action="Remove" asp-route-id="@Model" id="delete">Delete project</a>
+<a asp-controller="Project" asp-action="Remove" asp-route-id="@Model" class="btn btn-danger">Delete project</a>

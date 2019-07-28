@@ -104,3 +104,28 @@ D:\Murashkevich\Visual Studio\Course Project\CourseProject.Web\obj\Debug\netcore
 D:\Murashkevich\Visual Studio\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.g.cshtml.cs
 D:\Murashkevich\Visual Studio\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
 D:\Murashkevich\Visual Studio\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\GetProfile.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Login.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\Index.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\Register.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\_ViewImports.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Project\AddReward.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Project\Create.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Project\CreateAlbum.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Project\CreateContent.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Project\CreateMenu.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Project\CreateRewards.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Project\GetReward.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Project\PreViewAlbum.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Project\PreViewImage.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Project\PreViewImages.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Project\SaveReward.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Project\ShowRewards.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Show\Get.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\GetProfile.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\SettingProfile.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\ProfileImage.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\UserCampaigns.g.cshtml.cs

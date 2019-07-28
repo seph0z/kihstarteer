@@ -1,0 +1,10 @@
+﻿@using System.Collections.Generic
+@model List<string>
+
+@foreach (var img in Model)
+{
+    <img src="@img" id="addImageProfile" class="mx-auto d-block" alt="Alternate Text" />
+    <script>
+        document.getElementById('imagePath').value = "@img";
+    </script>
+}

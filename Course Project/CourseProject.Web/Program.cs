@@ -22,8 +22,7 @@ namespace CourseProject.Web
                 , typeof(CategoryMappingProfile)
                 , typeof(ImageMappingProfile)
                 , typeof(RewardMappingProfile)
-                , typeof(ShowProjectMappingProfile)
-                , typeof(ProfileMappingProfile)));
+                , typeof(ShowProjectMappingProfile)));
             CreateWebHostBuilder(args).Build().Run();
         }
 

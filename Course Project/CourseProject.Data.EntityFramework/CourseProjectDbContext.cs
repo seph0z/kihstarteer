@@ -1,5 +1,6 @@
 ﻿using CourseProject.Data.Contracts.Entities;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 
 namespace CourseProject.Data.EntityFramework
@@ -29,7 +30,6 @@ namespace CourseProject.Data.EntityFramework
         public virtual DbSet<Reward> Rewards { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
         public virtual DbSet<ProjectTag> ProjectTags { get; set; }
-        public virtual DbSet<Profile> Profiles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -145,10 +145,6 @@ namespace CourseProject.Data.EntityFramework
                 entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
 
                 entity.Property(e => e.UserName).HasMaxLength(256);
-
-                entity.HasOne(d => d.Profile)
-                .WithOne(p => p.User)
-                .HasForeignKey<Profile>(d => d.UserId);
             });
 
             modelBuilder.Entity<Project>(entity =>

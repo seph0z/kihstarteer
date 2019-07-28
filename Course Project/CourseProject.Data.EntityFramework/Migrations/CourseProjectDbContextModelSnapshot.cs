@@ -137,12 +137,18 @@ namespace CourseProject.Data.EntityFramework.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
+                    b.Property<string>("Biography");
+
                     b.Property<string>("ConcurrencyStamp");
+
+                    b.Property<string>("Country");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed");
+
+                    b.Property<string>("Image");
 
                     b.Property<bool>("LockoutEnabled");
 
@@ -305,25 +311,6 @@ namespace CourseProject.Data.EntityFramework.Migrations
                     b.ToTable("Image");
                 });
 
-            modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Profile", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Image");
-
-                    b.Property<string>("UserId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique()
-                        .HasFilter("[UserId] IS NOT NULL");
-
-                    b.ToTable("Profiles");
-                });
-
             modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Project", b =>
                 {
                     b.Property<int>("Id")
@@ -463,13 +450,6 @@ namespace CourseProject.Data.EntityFramework.Migrations
                         .WithMany("Images")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Profile", b =>
-                {
-                    b.HasOne("CourseProject.Data.Contracts.Entities.AspNetUsers", "User")
-                        .WithOne("Profile")
-                        .HasForeignKey("CourseProject.Data.Contracts.Entities.Profile", "UserId");
                 });
 
             modelBuilder.Entity("CourseProject.Data.Contracts.Entities.Project", b =>
