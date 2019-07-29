@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CourseProject.Domain.Contracts.ViewModels.UserViewModel>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Country</th>
+                <th scope="col">Role</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var user in Model)
+            {
+            <tr>
+                <th scope="row">@user.Name</th>
+                <td>@if (user.Country == null)
+                {
+                    <div>No information</div>
+                }
+                else
+                {
+                    @user.Country
+                }
+                </td>
+                <td>
+                    @user.Role
+                </td>
+                <td><a asp-controller="User" asp-action="GetProfile" asp-route-id="@user.Id">Details</a></td>
+                <td><a asp-controller="User" asp-action="Remove" asp-route-id="@user.Id">Delete</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>

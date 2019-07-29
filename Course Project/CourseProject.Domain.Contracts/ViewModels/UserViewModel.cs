@@ -11,5 +11,6 @@ namespace CourseProject.Domain.Contracts.ViewModels
         public string Image { get; set; }
         public string Biography { get; set; }
         public string Country { get; set; }
+        public string Role { get; set; }
     }
 }

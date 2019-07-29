@@ -78,12 +78,25 @@
 
     <hr id="hara" />
 
-    <div class="row" style="margin-bottom: 100px;">
+    <div class="row">
         <div class="col-sm-5">
             <p style="font-size: 20px;">Country</p>
         </div>
         <div class="col-sm-7">
             <input asp-for="Country" placeholder="Your country" class="form-control" />
+        </div>
+    </div>
+
+    <hr id="hara" />
+
+    <div class="row" style="margin-bottom: 100px;">
+        <div class="col-sm-5">
+            <p style="font-size: 20px;">Role</p>
+        </div>
+        <div class="col-sm-7">
+            <select asp-for="Role" asp-items="ViewBag.Role" class="form-control">
+                <option selected="selected" disabled="disabled">Role</option>
+            </select>
         </div>
     </div>
 

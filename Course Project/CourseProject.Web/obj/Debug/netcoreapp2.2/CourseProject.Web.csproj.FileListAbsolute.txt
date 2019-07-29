@@ -129,3 +129,4 @@ D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\R
 D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\SettingProfile.g.cshtml.cs
 D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\ProfileImage.g.cshtml.cs
 D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\UserCampaigns.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\UserManagement.g.cshtml.cs

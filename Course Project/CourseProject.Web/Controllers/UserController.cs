@@ -7,6 +7,7 @@ using CourseProject.Domain.Contracts.ViewModels;
 using CourseProject.Web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CourseProject.Web.Controllers
 {
@@ -38,6 +39,12 @@ namespace CourseProject.Web.Controllers
         public IActionResult SettingProfile(string id)
         {
             var user = userService.Get(id);
+            var roles = userService.GetRoles();
+            if(user.Role != null)
+            {
+                roles.ToList().Find(x => x.Value == user.Role).Selected = true;
+            }
+            ViewBag.Role = roles;
             return View(user);
         }
 
@@ -62,5 +69,16 @@ namespace CourseProject.Web.Controllers
             return View(projects);
         }
 
+        public IActionResult UserManagement()
+        {
+            var users = userService.GetUsers();
+            return View(users);
+        }
+
+        public IActionResult Remove(string id)
+        {
+            userService.Remove(id);
+            return RedirectToAction("UserManagement");
+        }
     }
 }
