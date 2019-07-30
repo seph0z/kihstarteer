@@ -16,20 +16,22 @@ namespace CourseProject.Data.EntityFramework
         {
         }
 
-        public virtual DbSet<AspNetRoleClaims> AspNetRoleClaims { get; set; }
-        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
-        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
-        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
-        public virtual DbSet<AspNetUserRoles> AspNetUserRoles { get; set; }
-        public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
-        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
+        public DbSet<AspNetRoleClaims> AspNetRoleClaims { get; set; }
+        public DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public DbSet<AspNetUserRoles> AspNetUserRoles { get; set; }
+        public DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
+        public DbSet<AspNetUsers> AspNetUsers { get; set; }
 
-        public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Project> Projects { get; set; }
-        public virtual DbSet<Content> Contents { get; set; }
-        public virtual DbSet<Reward> Rewards { get; set; }
-        public virtual DbSet<Tag> Tags { get; set; }
-        public virtual DbSet<ProjectTag> ProjectTags { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Content> Contents { get; set; }
+        public DbSet<Reward> Rewards { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<ProjectTag> ProjectTags { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

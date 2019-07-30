@@ -162,3 +162,16 @@
     border-radius: 50%;
     height: 250px;
 }
+
+#post {
+    color: black;
+}
+
+#post:visited {
+    color:black;
+}
+
+    #post:hover {
+        text-decoration: none; /* Убираем подчеркивание */
+        color: coral;
+    }

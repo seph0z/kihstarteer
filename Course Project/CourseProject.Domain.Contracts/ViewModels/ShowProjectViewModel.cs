@@ -18,6 +18,7 @@ namespace CourseProject.Domain.Contracts.ViewModels
         public string Category { get; set; }
         public string User { get; set; }
         public ICollection<RewardViewModel> Rewards { get; set; }
+        public ICollection<PostViewModel> Posts { get; set; }
         public string[] Images { get; set; }
         public string[] Tags { get; set; }
     }

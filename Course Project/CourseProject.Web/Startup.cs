@@ -14,6 +14,7 @@ using CourseProject.Domain.Contracts;
 using CourseProject.Domain.Services;
 using System;
 using System.Threading.Tasks;
+using CourseProject.Web.Hubs;
 
 namespace CourseProject.Web
 {
@@ -44,17 +45,21 @@ namespace CourseProject.Web
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddSignalR();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddScoped<CourseProjectDbContext>();
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped<IProjectService, ProjectService>();
-            services.AddScoped<IContentService, ContentService>();
-            services.AddScoped<IImageService, ImageService>();
-            services.AddScoped<ICategoryService, CategoryService>();
-            services.AddScoped<IRewardService, RewardService>();
-            services.AddScoped<IShowProjectService, ShowProjectService>();
-            services.AddScoped<IUserService, UserService>();
+            services.AddTransient<CourseProjectDbContext>();
+            services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient<IProjectService, ProjectService>();
+            services.AddTransient<IContentService, ContentService>();
+            services.AddTransient<IImageService, ImageService>();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IRewardService, RewardService>();
+            services.AddTransient<IShowProjectService, ShowProjectService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IPostService, PostService>();
+            services.AddTransient<ICommentService, CommentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -85,25 +90,30 @@ namespace CourseProject.Web
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            var role = CreateRoles(serviceProvider);
-            role.Wait();
-        }
-
-        private async Task CreateRoles(IServiceProvider serviceProvider)
-        {
-            //initializing custom roles   
-            var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-            string[] roleNames = { "Admin", "User", "HR", "Banned" };
-            IdentityResult roleResult;
-
-            foreach (var roleName in roleNames)
+            app.UseSignalR(routes =>
             {
-                var roleExist = await RoleManager.RoleExistsAsync(roleName);
-                if (!roleExist)
-                {
-                    roleResult = await RoleManager.CreateAsync(new IdentityRole(roleName));
-                }
-            }
+                routes.MapHub<CommentHub>("/chatHub");
+            });
+
+            //var role = CreateRoles(serviceProvider);
+            //role.Wait();
         }
+
+        //private async Task CreateRoles(IServiceProvider serviceProvider)
+        //{
+        //    //initializing custom roles   
+        //    var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        //    string[] roleNames = { "Admin", "User", "HR", "Banned" };
+        //    IdentityResult roleResult;
+
+        //    foreach (var roleName in roleNames)
+        //    {
+        //        var roleExist = await RoleManager.RoleExistsAsync(roleName);
+        //        if (!roleExist)
+        //        {
+        //            roleResult = await RoleManager.CreateAsync(new IdentityRole(roleName));
+        //        }
+        //    }
+        //}
     }
 }

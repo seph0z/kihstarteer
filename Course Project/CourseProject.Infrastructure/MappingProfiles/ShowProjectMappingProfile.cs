@@ -36,6 +36,7 @@ namespace CourseProject.Infrastructure.MappingProfiles
                 .ForMember(dest => dest.Rewards, c => c.MapFrom(src => src.Rewards))
                 .ForMember(dest => dest.Images, c => c.MapFrom(src => src.Images))
                 .ForMember(dest => dest.Tags, c => c.MapFrom(src => src.ProjectTags))
+                .ForMember(dest => dest.Posts, c => c.MapFrom(src => src.Posts))
                 .ForAllOtherMembers(c => c.Ignore());
         }
 
@@ -56,6 +57,7 @@ namespace CourseProject.Infrastructure.MappingProfiles
                 .ForMember(dest => dest.Rewards, c => c.MapFrom(src => src.Rewards))
                 .ForMember(dest => dest.Images, c => c.MapFrom(src => src.Images))
                 .ForMember(dest => dest.ProjectTags, c => c.MapFrom(src => src.Tags))
+                .ForMember(dest => dest.Posts, c => c.MapFrom(src => src.Posts))
                 .ForAllOtherMembers(c => c.Ignore());
         }
 

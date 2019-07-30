@@ -25,5 +25,7 @@ namespace CourseProject.Data.Contracts.Entities
         public virtual ICollection<Image> Images { get; set; }
         public virtual ICollection<Reward> Rewards { get; set; }
         public virtual ICollection<ProjectTag> ProjectTags { get; set; }
+        public virtual ICollection<Post> Posts { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

@@ -49,7 +49,7 @@
                 <li class="nav-item">
                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="font-size: 20px;">
                         News
-                        <span class="badge badge-pill badge-light badge-pill">0</span>
+                        <span class="badge badge-pill badge-light badge-pill">@Model.Posts.Count()</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -79,11 +79,71 @@
             </div>
 
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                post
+
+                @if (Model.Posts.Count != 0)
+                {
+                    @for (int i = 0; i < Model.Posts.Count(); i++)
+                    {
+                        if (i % 2 == 0)
+                        {
+                            <a asp-action="GetPost" asp-route-id="@Model.Posts.ToList()[i].Id" id="post">
+                                <div class="row justify-content-start" style="margin-bottom:100px;">
+                                    <div class="col-5">
+                                        <div style="font-size:30px;" id="rightPost">
+                                            @Model.Posts.ToList()[i].Title
+                                        </div>
+                                        <div>@Model.Posts.ToList()[i].SubTitle</div>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+                        else
+                        {
+                            <a asp-action="GetPost" asp-route-id="@Model.Posts.ToList()[i].Id" id="post">
+                                <div class="row justify-content-end" style="margin-bottom:100px;">
+                                    <div class="col-5">
+                                        <div style="font-size:30px;">
+                                            @Model.Posts.ToList()[i].Title
+                                        </div>
+                                        <div>@Model.Posts.ToList()[i].SubTitle</div>
+                                    </div>
+                                </div>
+                            </a>
+                        }
+                    }
+                }
+
+                <a class="btn btn-success" asp-action="AddPost" asp-route-projectId="@Model.Id" style="margin-top:50px;">+Add Post</a>
+
             </div>
 
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                com
+
+                <input type="text" hidden="hidden" value="@Model.Id" id="projectId" />
+                <input type="text" hidden="hidden" value="@User.Identity.Name" id="userInput" />
+
+                <div class="row">&nbsp;</div>
+                <div class="row">
+                    <div class="col-6">&nbsp;</div>
+                    <div class="col-6">
+                        @*User..........<input type="text" id="userInput" />*@
+                        <br />
+                        Message...<input type="text" id="messageInput" />
+                        <input type="button" id="sendButton" value="Send Message" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <hr />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">&nbsp;</div>
+                    <div class="col-6">
+                        <ul id="messagesList"></ul>
+                    </div>
+                </div>
+
             </div>
 
             <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="contact-tab">
