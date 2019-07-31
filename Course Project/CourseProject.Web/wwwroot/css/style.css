@@ -172,6 +172,32 @@
 }
 
     #post:hover {
-        text-decoration: none; /* Убираем подчеркивание */
+        text-decoration: none; 
         color: coral;
     }
+
+#inputComment {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#brd {
+    border: 1px solid lightgray;
+    padding: 4px;
+}
+
+#brd1 {
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin: 4px;
+}
+
+#nameComment {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#textComment {
+    margin: 20px;
+    font-style: italic;
+}

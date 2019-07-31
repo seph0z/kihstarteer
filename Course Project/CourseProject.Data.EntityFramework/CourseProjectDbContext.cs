@@ -32,6 +32,7 @@ namespace CourseProject.Data.EntityFramework
         public DbSet<ProjectTag> ProjectTags { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<RewardAspNetUsers> RewardAspNetUsers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -175,6 +176,19 @@ namespace CourseProject.Data.EntityFramework
                 entity.HasOne(d => d.Tag)
                 .WithMany(p => p.ProjectTags)
                 .HasForeignKey(d => d.TagId);
+            });
+
+            modelBuilder.Entity<RewardAspNetUsers>(entity =>
+            {
+                entity.HasKey(sc => new { sc.RewardId, sc.UserId });
+
+                entity.HasOne(d => d.Reward)
+                .WithMany(p => p.RewardAspNetUsers)
+                .HasForeignKey(d => d.RewardId);
+
+                entity.HasOne(d => d.User)
+                .WithMany(p => p.RewardAspNetUsers)
+                .HasForeignKey(d => d.UserId);
             });
 
             modelBuilder.Entity<Category>().HasData(new List<Category>

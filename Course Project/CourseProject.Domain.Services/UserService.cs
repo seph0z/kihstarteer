@@ -97,5 +97,19 @@ namespace CourseProject.Domain.Services
             }
             return selectLists;
         }
+
+        public void AddReward(int rewardId, string userId)
+        {
+            dbContext.RewardAspNetUsers.Add(new RewardAspNetUsers { RewardId = rewardId, UserId = userId });
+            dbContext.SaveChanges();
+        }
+
+        public IEnumerable<RewardViewModel> GetRewards(string userId)
+        {
+            var rewardsAspUsers = dbContext.AspNetUsers.Find(userId).RewardAspNetUsers;
+            var reward = Mapper.Map<IEnumerable<RewardAspNetUsers>, IEnumerable<Reward>>(rewardsAspUsers);
+            var rewardViewModel = Mapper.Map<IEnumerable<Reward>, IEnumerable<RewardViewModel>>(reward);
+            return rewardViewModel;
+        }
     }
 }

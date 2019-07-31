@@ -12,5 +12,6 @@ namespace CourseProject.Domain.Contracts.ViewModels
         public string Biography { get; set; }
         public string Country { get; set; }
         public string Role { get; set; }
+        public ICollection<RewardViewModel> Rewards { get; set; }
     }
 }

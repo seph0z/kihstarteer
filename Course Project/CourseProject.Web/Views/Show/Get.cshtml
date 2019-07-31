@@ -1,4 +1,6 @@
 ﻿@model CourseProject.Domain.Contracts.ViewModels.ShowProjectViewModel
+@using System.Globalization;
+@using System.Security.Claims;
 
 
 <div class="row justify-content-center">
@@ -17,15 +19,30 @@
         </div>
     </div>
     <div class="col-3">
-        <div class="progress" style="height: 4px; margin-bottom:15px;">
-            <div class="progress-bar bg-success" role="progressbar" style="width: @ViewBag.Percent%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+        <div id="updateFunding">
+            <div class="progress" style="height: 4px; margin-bottom:15px;">
+                <div class="progress-bar bg-success" role="progressbar" style="width: @ViewBag.Percent%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div style="color:mediumseagreen; font-size:35px;">US$ @Model.CurrentFunding</div>
         </div>
-        <div style="color:mediumseagreen; font-size:35px;">US$ @Model.CurrentFunding</div>
+
         <div style="font-weight:lighter; margin-bottom:15px;">pledged of US$ @Model.Funding goal</div>
         <div style="font-size:35px;">@Model.Duration.ToShortDateString()</div>
         <div style="font-weight:lighter; margin-bottom:15px;">the end date of the project</div>
         <div style="font-size:35px;">@Model.User</div>
         <div style="font-weight:lighter; margin-bottom:15px;">the author of the project</div>
+    <form asp-action="Dotate"
+          method="post"
+          data-ajax="true"
+          data-ajax-method="post"
+          data-ajax-mode="replace"
+          data-ajax-update="#updateFunding">
+        <input id="inputModeney" type="number" name="count" class="form-control" style="margin-bottom:15px;">
+        <input type="number" name="funding" hidden="hidden" value="@Model.Funding" class="form-control" style="margin-bottom:15px;">
+        <input type="number" name="projectId" hidden="hidden" value="@Model.Id">
+        <button type="submit" class="btn btn-outline-success" style="width:100%">To donate</button>
+    </form>
     </div>
 </div>
 
@@ -55,7 +72,7 @@
                 <li class="nav-item">
                     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" style="font-size: 20px;">
                         Comments
-                        <span class="badge badge-pill badge-light badge-pill">0</span>
+                        <span class="badge badge-pill badge-light badge-pill">@Model.Comments.Count()</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -121,27 +138,47 @@
 
                 <input type="text" hidden="hidden" value="@Model.Id" id="projectId" />
                 <input type="text" hidden="hidden" value="@User.Identity.Name" id="userInput" />
+                <input type="text" hidden="hidden" value="@ViewBag.UserImage" id="commentImage" />
+                <input type="text" hidden="hidden" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" id="userId" />
+                <input type="text" hidden="hidden" value="@DateTime.Now.ToString("U" ,CultureInfo.CreateSpecificCulture("en-US"))" id="time" />
 
-                <div class="row">&nbsp;</div>
-                <div class="row">
-                    <div class="col-6">&nbsp;</div>
-                    <div class="col-6">
-                        @*User..........<input type="text" id="userInput" />*@
-                        <br />
-                        Message...<input type="text" id="messageInput" />
-                        <input type="button" id="sendButton" value="Send Message" />
+
+                <div class="row" id="inputComment">
+                    <div class="col-10">
+                        <input type="text" class="form-control" id="messageInput" />
+                    </div>
+                    <div class="col-2">
+                        <input type="button" class="btn btn-outline-success" id="sendButton" value="Send Message" />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <hr />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">&nbsp;</div>
-                    <div class="col-6">
-                        <ul id="messagesList"></ul>
-                    </div>
+
+
+                <div id="brd">
+                    <div id="messagesList"></div>
+                    @if (Model.Comments != null)
+                    {
+                        @foreach (var comment in Model.Comments.Reverse())
+                        {
+                            <div id="brd1">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <img src="@comment.UserImage" alt="" style="width: 100%; border-radius: 50%;">
+                                    </div>
+                                    <div class="col-11">
+                                        <div id="nameComment">
+                                            @comment.UserName
+                                        </div>
+                                        <div style="font-weight: lighter; ">
+                                            @comment.Create.ToString("U", CultureInfo.CreateSpecificCulture("en-US"))
+                                        </div>
+                                    </div>
+                                    <div id="textComment">
+                                        @comment.Text
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
                 </div>
 
             </div>
@@ -186,7 +223,19 @@
                         <p style="font-weight:bolder; font-size: 18px;">@reward.Title</p>
                         <p style="font-weight:unset;margin-bottom:40px;">@reward.Description</p>
                     </div>
-                    <button type="button" class="btn btn-outline-info" id="btnPay">Select this reward</button>
+                    <form asp-action="Dotate"
+                          method="post"
+                          data-ajax="true"
+                          data-ajax-method="post"
+                          data-ajax-mode="replace"
+                          data-ajax-update="#updateFunding">
+                        <input id="inputModeney" type="number" name="count" hidden="hidden" value="@reward.Amount" class="form-control" style="margin-bottom:15px;">
+                        <input type="number" name="funding" hidden="hidden" value="@Model.Funding" class="form-control" style="margin-bottom:15px;">
+                        <input type="number" name="projectId" hidden="hidden" value="@Model.Id">
+                        <input type="number" name="rewardId" hidden="hidden" value="@reward.Id">
+                        <button type="submit" class="btn btn-outline-info" id="btnPay">Select this reward</button>
+                    </form>
+                    @*<button type="button" class="btn btn-outline-info" id="btnPay">Select this reward</button>*@
                 </div>
             }
         }

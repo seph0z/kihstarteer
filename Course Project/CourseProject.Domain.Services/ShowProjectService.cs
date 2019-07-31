@@ -17,6 +17,15 @@ namespace CourseProject.Domain.Services
             this.repository = repository;
         }
 
+        public double AddMoney(double Count, int projectId)
+        {
+            var project = repository.Get(projectId);
+            project.CurrentFunding += Count;
+            repository.Update(project);
+            repository.SaveChanges();
+            return project.CurrentFunding;
+        }
+
         public ShowProjectViewModel Get(int id)
         {
             var project = repository.Get(id);

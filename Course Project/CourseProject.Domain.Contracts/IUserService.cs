@@ -15,5 +15,7 @@ namespace CourseProject.Domain.Contracts
         void AddRole(string id, string role);
         void Remove(string id);
         List<SelectListItem> GetRoles();
+        void AddReward(int rewardId, string userId);
+        IEnumerable<RewardViewModel> GetRewards(string userId);
     }
 }

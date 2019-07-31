@@ -133,3 +133,5 @@ D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\R
 D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Show\AddPost.g.cshtml.cs
 D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Show\GetPost.g.cshtml.cs
 D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Show\Update.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Show\Dotate.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\MyRewards.g.cshtml.cs

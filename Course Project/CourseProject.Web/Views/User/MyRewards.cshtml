@@ -1,0 +1,15 @@
+﻿@model IEnumerable<CourseProject.Domain.Contracts.ViewModels.RewardViewModel>
+
+@if (Model != null)
+{
+    @foreach (var reward in Model)
+    {
+        <p>@reward.Id</p>
+        <p>@reward.Title</p>
+        <p>@reward.Description</p>
+        <p>@reward.Amount</p>
+
+        <br />
+        <br />
+    }
+}

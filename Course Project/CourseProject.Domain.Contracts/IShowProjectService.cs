@@ -8,5 +8,6 @@ namespace CourseProject.Domain.Contracts
     public interface IShowProjectService
     {
         ShowProjectViewModel Get(int id);
+        double AddMoney(double Count, int projectId);
     }
 }

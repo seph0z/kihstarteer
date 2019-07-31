@@ -13,5 +13,6 @@ namespace CourseProject.Data.Contracts.Entities
 
         public int ProjectId { get; set; }
         public virtual Project Project { get; set; }
+        public virtual ICollection<RewardAspNetUsers> RewardAspNetUsers { get; set; }
     }
 }

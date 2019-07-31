@@ -80,5 +80,12 @@ namespace CourseProject.Web.Controllers
             userService.Remove(id);
             return RedirectToAction("UserManagement");
         }
+
+        public IActionResult MyRewards(string id)
+        {
+            //var rewards = userService.Get(id).Rewards;
+            var rewards = userService.GetRewards(id);
+            return View(rewards);
+        }
     }
 }

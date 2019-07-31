@@ -95,25 +95,25 @@ namespace CourseProject.Web
                 routes.MapHub<CommentHub>("/chatHub");
             });
 
-            //var role = CreateRoles(serviceProvider);
-            //role.Wait();
+            var role = CreateRoles(serviceProvider);
+            role.Wait();
         }
 
-        //private async Task CreateRoles(IServiceProvider serviceProvider)
-        //{
-        //    //initializing custom roles   
-        //    var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-        //    string[] roleNames = { "Admin", "User", "HR", "Banned" };
-        //    IdentityResult roleResult;
+        private async Task CreateRoles(IServiceProvider serviceProvider)
+        {
+            //initializing custom roles   
+            var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            string[] roleNames = { "Admin", "User", "HR", "Banned" };
+            IdentityResult roleResult;
 
-        //    foreach (var roleName in roleNames)
-        //    {
-        //        var roleExist = await RoleManager.RoleExistsAsync(roleName);
-        //        if (!roleExist)
-        //        {
-        //            roleResult = await RoleManager.CreateAsync(new IdentityRole(roleName));
-        //        }
-        //    }
-        //}
+            foreach (var roleName in roleNames)
+            {
+                var roleExist = await RoleManager.RoleExistsAsync(roleName);
+                if (!roleExist)
+                {
+                    roleResult = await RoleManager.CreateAsync(new IdentityRole(roleName));
+                }
+            }
+        }
     }
 }
