@@ -28,7 +28,7 @@ namespace CourseProject.Infrastructure.MappingProfiles
                 .ForMember(dest => dest.Image, c => c.MapFrom(src => src.Image))
                 .ForMember(dest => dest.Biography, c => c.MapFrom(src => src.Biography))
                 .ForMember(dest => dest.Country, c => c.MapFrom(src => src.Country))
-                .ForMember(dest => dest.Rewards, c => c.MapFrom(src => src.RewardAspNetUsers))
+                //.ForMember(dest => dest.Rewards, c => c.MapFrom(src => src.RewardAspNetUsers))
                 .ForMember(dest => dest.Role, c => c.MapFrom(src => src.AspNetUserRoles.ToList().FirstOrDefault().Role.Name))
                 .ForAllOtherMembers(c => c.Ignore());
         }

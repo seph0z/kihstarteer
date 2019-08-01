@@ -233,9 +233,8 @@
                         <input type="number" name="funding" hidden="hidden" value="@Model.Funding" class="form-control" style="margin-bottom:15px;">
                         <input type="number" name="projectId" hidden="hidden" value="@Model.Id">
                         <input type="number" name="rewardId" hidden="hidden" value="@reward.Id">
-                        <button type="submit" class="btn btn-outline-info" id="btnPay">Select this reward</button>
+                        <button type="submit" class="btn btn-outline-info" onclick="scrollRewardUpdate()" id="btnPay">Select this reward</button>
                     </form>
-                    @*<button type="button" class="btn btn-outline-info" id="btnPay">Select this reward</button>*@
                 </div>
             }
         }

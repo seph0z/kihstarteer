@@ -49,17 +49,17 @@ namespace CourseProject.Web
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddTransient<CourseProjectDbContext>();
+            services.AddScoped<CourseProjectDbContext>();
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
-            services.AddTransient<IProjectService, ProjectService>();
-            services.AddTransient<IContentService, ContentService>();
-            services.AddTransient<IImageService, ImageService>();
-            services.AddTransient<ICategoryService, CategoryService>();
-            services.AddTransient<IRewardService, RewardService>();
-            services.AddTransient<IShowProjectService, ShowProjectService>();
-            services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IPostService, PostService>();
-            services.AddTransient<ICommentService, CommentService>();
+            services.AddScoped<IProjectService, ProjectService>();
+            services.AddScoped<IContentService, ContentService>();
+            services.AddScoped<IImageService, ImageService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IRewardService, RewardService>();
+            services.AddScoped<IShowProjectService, ShowProjectService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IPostService, PostService>();
+            services.AddScoped<ICommentService, CommentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -87,7 +87,7 @@ namespace CourseProject.Web
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Show}/{action=Index}/{id?}");
             });
 
             app.UseSignalR(routes =>

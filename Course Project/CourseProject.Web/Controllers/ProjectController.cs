@@ -89,7 +89,7 @@ namespace CourseProject.Web.Controllers
         public IActionResult Remove(int id)
         {
             projectService.Remove(id);
-            return RedirectToAction("Create");
+            return RedirectToRoute(new { Controller = "Show", Action = "Index" });
         }
 
         [Route("Project/CreateContent/{projectId:int}")]

@@ -40,6 +40,7 @@ namespace CourseProject.Infrastructure.MappingProfiles
                 .ForMember(dest => dest.Image, c => c.MapFrom(src => src.Image))
                 .ForMember(dest => dest.Video, c => c.MapFrom(src => src.Video))
                 .ForMember(dest => dest.Funding, c => c.MapFrom(src => src.Funding))
+                .ForMember(dest => dest.CurrentFunding, c => c.MapFrom(src => src.CurrentFunding))
                 .ForMember(dest => dest.Duration, c => c.MapFrom(src => src.Duration))
                 .ForMember(dest => dest.UserId, c => c.MapFrom(src => src.UserId))
                 .ForPath(dest => dest.CategoryId, c => c.MapFrom(src => src.CategoryId))

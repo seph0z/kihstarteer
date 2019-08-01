@@ -1,0 +1,26 @@
+﻿@model IEnumerable<CourseProject.Domain.Contracts.ViewModels.ShowProjectViewModel>
+
+<div class="row">
+    @if (Model != null)
+    {
+        @foreach (var project in Model)
+        {
+            <div class="col-4" style="margin-bottom:26px;">
+                <a asp-action="Get" asp-route-Id="@project.Id" id="cardDesk">
+                    <div class="card">
+                        <img src="@project.Image" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">@project.Title</h5>
+                            <p class="card-text">@project.Subtitle</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    }
+    else
+    {
+        <p>Dont have result!</p>
+    }
+
+</div>

@@ -2,14 +2,18 @@
 
 @if (Model != null)
 {
-    @foreach (var reward in Model)
-    {
-        <p>@reward.Id</p>
-        <p>@reward.Title</p>
-        <p>@reward.Description</p>
-        <p>@reward.Amount</p>
-
-        <br />
-        <br />
-    }
+    <div class="row">
+        @foreach (var reward in Model)
+        {
+            <div class="col-6">
+                <div class="card" style="margin-bottom:26px;">
+                    <div class="card-body">
+                        <p style="font-size:22px;">Pledge $@reward.Amount</p>
+                        <p style="font-weight:bolder; font-size: 18px;">@reward.Title</p>
+                        <p style="font-weight:unset;margin-bottom:40px;">@reward.Description</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 }

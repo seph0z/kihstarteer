@@ -40,3 +40,9 @@ function scrollRewardUpdate() {
         scrollTop: $("#scrollUpdate").offset().top
     }, 1000);
 };
+
+function scrollRewardUpdate() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#headContent").offset().top
+    }, 500);
+};

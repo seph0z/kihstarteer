@@ -23,6 +23,8 @@ namespace CourseProject.Domain.Services
         public UserViewModel Get(string id)
         {
             var user = dbContext.AspNetUsers.Find(id);
+            if (user == null)
+                return null;
             if(user.AspNetUserRoles.Count == 0)
             {
                 var role = dbContext.AspNetRoles.ToList().Find(x => x.Name == "User");

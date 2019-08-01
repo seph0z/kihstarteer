@@ -9,5 +9,7 @@ namespace CourseProject.Domain.Contracts
     {
         ShowProjectViewModel Get(int id);
         double AddMoney(double Count, int projectId);
+        IEnumerable<ShowProjectViewModel> GetAll();
+        IEnumerable<ShowProjectViewModel> GetForFind(string text);
     }
 }

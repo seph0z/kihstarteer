@@ -27,15 +27,26 @@ namespace CourseProject.Web.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var projects = showProjectService.GetAll();
+            return View(projects);
+        }
+
+        public IActionResult Find(string text)
+        {
+            var forFind = showProjectService.GetForFind(text);
+            return View(forFind);
         }
 
         public IActionResult Get(int Id)
         {
             var project = showProjectService.Get(Id);
             ViewBag.Percent = (int)((project.CurrentFunding * 100) / project.Funding);
-            project.Content = Markdown.ToHtml(project.Content);
-            ViewBag.UserImage = userService.Get(User.FindFirstValue(ClaimTypes.NameIdentifier)).Image;
+            if(project.Content != null)
+                project.Content = Markdown.ToHtml(project.Content);
+            var user = userService.Get(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            ViewBag.UserImage = "";
+            if (user != null)
+                ViewBag.UserImage = user.Image;
             return View(project); 
         }
 
@@ -82,11 +93,31 @@ namespace CourseProject.Web.Controllers
 
         public IActionResult Dotate(double count, int projectId, double funding , int rewardId)
         {
-            if(rewardId != 0)
+            ViewBag.Have = false;
+            ViewBag.CurrentFunding = new double();
+            ViewBag.Percent = new int();
+            var currentCoutn = new double();
+            var rew = userService.GetRewards(User.FindFirstValue(ClaimTypes.NameIdentifier)).ToList().Find(x => x.Id == rewardId);
+
+            if (rewardId != 0)
             {
-                userService.AddReward(rewardId, User.FindFirstValue(ClaimTypes.NameIdentifier));
+                if(rew == null)
+                {
+                    userService.AddReward(rewardId, User.FindFirstValue(ClaimTypes.NameIdentifier));
+                    currentCoutn = showProjectService.AddMoney(count, projectId);
+                    ViewBag.Have = true;
+                }
+                else
+                {
+                    count = 0;
+                    currentCoutn = showProjectService.AddMoney(count, projectId);
+                }
             }
-            var currentCoutn = showProjectService.AddMoney(count, projectId);
+            else
+            {
+                currentCoutn = showProjectService.AddMoney(count, projectId);
+                ViewBag.Have = true;
+            }
             ViewBag.CurrentFunding = currentCoutn;
             ViewBag.Percent = (int)((currentCoutn * 100) / funding);
             return PartialView();           
