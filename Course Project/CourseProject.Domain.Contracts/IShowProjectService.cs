@@ -11,5 +11,8 @@ namespace CourseProject.Domain.Contracts
         double AddMoney(double Count, int projectId);
         IEnumerable<ShowProjectViewModel> GetAll();
         IEnumerable<ShowProjectViewModel> GetForFind(string text);
+        IEnumerable<ShowProjectViewModel> GetForCategory(string category);
+        IEnumerable<ShowProjectViewModel> GetTag(string tag);
+        IEnumerable<string> GetCloudTags();
     }
 }

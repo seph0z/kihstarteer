@@ -201,3 +201,12 @@
     margin: 20px;
     font-style: italic;
 }
+
+
+#profileNav {
+    color:black;
+    background-color: lightblue;
+}
+#profileNav:hover {
+    color: brown;
+}

@@ -82,8 +82,8 @@
             <p style="font-weight:lighter">Choose the category that most closely align with your project.</p>
         </div>
         <div class="col-sm-7">
-            <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-control">
-                <option selected="selected" disabled="disabled">Categories</option>
+            <select asp-for="CategoryId" required asp-items="ViewBag.Categories" class="form-control">
+                <option label="Categories"></option>
             </select>
         </div>
     </div>
@@ -130,7 +130,7 @@
         </div>
         <div class="col-sm-7">
             <p>End on a specific date</p>
-            <input asp-for="Duration" type="date" class="form-control" />
+            <input asp-for="Duration" type="date" required min="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" />
         </div>
     </div>
 
@@ -149,6 +149,13 @@
                     @foreach (var tag in Model.Tags)
                     {
                         <option selected="selected">@tag</option>
+                    }
+                }
+                else
+                {
+                    @foreach (var tag in ViewBag.Tags)
+                    {
+                        <option>@tag</option>
                     }
                 }
             </select>

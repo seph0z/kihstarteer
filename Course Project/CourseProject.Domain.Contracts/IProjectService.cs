@@ -12,5 +12,6 @@ namespace CourseProject.Domain.Contracts
         int Add(ProjectViewModel projectViewModel);
         void Remove(int id);
         int Update(ProjectViewModel projectViewModel);
+        IEnumerable<string> Tags();
     }
 }

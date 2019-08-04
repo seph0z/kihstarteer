@@ -27,6 +27,7 @@ namespace CourseProject.Web.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.TagCloud = showProjectService.GetCloudTags();
             var projects = showProjectService.GetAll();
             return View(projects);
         }
@@ -121,6 +122,18 @@ namespace CourseProject.Web.Controllers
             ViewBag.CurrentFunding = currentCoutn;
             ViewBag.Percent = (int)((currentCoutn * 100) / funding);
             return PartialView();           
+        }
+
+        public IActionResult GetCategory(string category)
+        {
+            var projects = showProjectService.GetForCategory(category);
+            return View(projects);
+        }
+
+        public IActionResult GetTag(string tag)
+        {
+            var projects = showProjectService.GetTag(tag);
+            return View(projects);
         }
     }
 }

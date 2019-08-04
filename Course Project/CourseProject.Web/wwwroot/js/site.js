@@ -41,8 +41,8 @@ function scrollRewardUpdate() {
     }, 1000);
 };
 
-function scrollRewardUpdate() {
+function scrollRewardTake() {
     $([document.documentElement, document.body]).animate({
-        scrollTop: $("#headContent").offset().top
+        scrollTop: $("#topScrollGet").offset().top
     }, 500);
 };

@@ -1,8 +1,28 @@
 ﻿@model CourseProject.Domain.Contracts.ViewModels.UserViewModel
 
 
+@if (User.Identity.Name == Model.Name || User.IsInRole("Admin"))
+{
+    <ul class="nav justify-content-center" style="font-size:22px;">
+        <li class="nav-item">
+            <a class="nav-link" id="profileNav" asp-controller="User" asp-action="SettingProfile" asp-route-id="@Model.Id">Profile setting</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profileNav" asp-controller="User" asp-action="UserCampaigns" asp-route-id="@Model.Id">Campaigns</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profileNav" asp-controller="User" asp-action="MyRewards" asp-route-id="@Model.Id">Rewards</a>
+        </li>
+        <li class="nav-item">
+            @if (User.IsInRole("Admin"))
+            {
+                <a class="nav-link" id="profileNav" asp-controller="User" asp-action="UserManagement">User management</a>
+            }
+        </li>
+    </ul>
+}
 
-<div class="row justify-content-center" style="margin-top:150px;">
+<div class="row justify-content-center" style="margin-top:70px;">
     @if (Model.Image == null)
     {
         <img src="https://www.meme-arsenal.com/memes/63f058814afac6147b09c2f9e6858e6c.jpg" id="addImageProfile">
@@ -26,7 +46,7 @@
 }
 
 
-@if (User.Identity.Name == Model.Name || User.IsInRole("Admin"))
+@*@if (User.Identity.Name == Model.Name || User.IsInRole("Admin"))
 {
     <div class="row justify-content-center" style="margin-top:20px;">
         <div class="col-2">
@@ -44,7 +64,7 @@
 
 @if (User.IsInRole("Admin"))
 {
-<div class="row justify-content-center" style="margin-top:20px;">
-    <a class="btn btn-outline-dark" asp-controller="User" asp-action="UserManagement">User management</a>
-</div>
-}
+    <div class="row justify-content-center" style="margin-top:20px;">
+        <a class="btn btn-outline-dark" asp-controller="User" asp-action="UserManagement">User management</a>
+    </div>
+}*@

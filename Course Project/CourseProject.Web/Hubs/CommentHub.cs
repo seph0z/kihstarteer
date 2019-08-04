@@ -18,7 +18,7 @@ namespace CourseProject.Web.Hubs
         }
         public async Task SendMessage(string user, string message, int projectId, string userImage, string userId)
         {
-            string timeString = DateTime.Now.ToString("U", CultureInfo.CreateSpecificCulture("en-US"));
+            string timeString = DateTime.Now.ToString(CultureInfo.CreateSpecificCulture("en-US"));
             commentService.Add(new CommentViewModel
             {
                 Text = message,

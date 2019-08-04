@@ -3,8 +3,9 @@
 @using System.Security.Claims;
 
 
+
 <div class="row justify-content-center">
-    <div class="col-8" style="margin-bottom:30px; margin-top:30px;">
+    <div class="col-8" style="margin-bottom:30px; margin-top:30px;" id="topScrollGet">
         <div id="headContent">
             <h1>@Model.Title</h1>
             <p>@Model.Subtitle</p>
@@ -32,24 +33,33 @@
         <div style="font-weight:lighter; margin-bottom:15px;">the end date of the project</div>
         <div style="font-size:35px;">@Model.User</div>
         <div style="font-weight:lighter; margin-bottom:15px;">the author of the project</div>
-    <form asp-action="Dotate"
-          method="post"
-          data-ajax="true"
-          data-ajax-method="post"
-          data-ajax-mode="replace"
-          data-ajax-update="#updateFunding">
-        <input id="inputModeney" type="number" name="count" class="form-control" style="margin-bottom:15px;">
-        <input type="number" name="funding" hidden="hidden" value="@Model.Funding" class="form-control" style="margin-bottom:15px;">
-        <input type="number" name="projectId" hidden="hidden" value="@Model.Id">
-        <button type="submit" class="btn btn-outline-success" style="width:100%">To donate</button>
-    </form>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <form asp-action="Dotate"
+                  method="post"
+                  data-ajax="true"
+                  data-ajax-method="post"
+                  data-ajax-mode="replace"
+                  data-ajax-update="#updateFunding">
+                <input id="inputModeney" type="number" name="count" class="form-control" style="margin-bottom:15px;">
+                <input type="number" name="funding" hidden="hidden" value="@Model.Funding" class="form-control" style="margin-bottom:15px;">
+                <input type="number" name="projectId" hidden="hidden" value="@Model.Id">
+                <button type="submit" class="btn btn-outline-success" style="width:100%">To donate</button>
+            </form>
+        }
+        <div style="margin-top: 20px; font-size:25px;">
+            <a asp-action="GetCategory" asp-route-category="@Model.Category">
+                @Model.Category Project
+            </a>
+        </div>
     </div>
 </div>
 
-<div style="margin-top: 20px; font-size:22px;">
-    <a href="#">
-        @Model.Category
-    </a>
+<div style="margin-top:50px;">
+    @foreach (var tag in Model.Tags)
+    {
+        <a asp-action="GetTag" class="btn btn-outline-secondary" asp-route-tag="@tag" style="margin-right:5px;">@tag</a>
+    }
 </div>
 
 <hr id="hara" />
@@ -143,15 +153,17 @@
                 <input type="text" hidden="hidden" value="@DateTime.Now.ToString("U" ,CultureInfo.CreateSpecificCulture("en-US"))" id="time" />
 
 
-                <div class="row" id="inputComment">
-                    <div class="col-10">
-                        <input type="text" class="form-control" id="messageInput" />
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="row" id="inputComment">
+                        <div class="col-10">
+                            <input type="text" class="form-control" id="messageInput" />
+                        </div>
+                        <div class="col-2">
+                            <input type="button" class="btn btn-outline-success" id="sendButton" value="Send Message" />
+                        </div>
                     </div>
-                    <div class="col-2">
-                        <input type="button" class="btn btn-outline-success" id="sendButton" value="Send Message" />
-                    </div>
-                </div>
-
+                }
 
                 <div id="brd">
                     <div id="messagesList"></div>
@@ -169,7 +181,7 @@
                                             @comment.UserName
                                         </div>
                                         <div style="font-weight: lighter; ">
-                                            @comment.Create.ToString("U", CultureInfo.CreateSpecificCulture("en-US"))
+                                            @comment.Create.ToString(CultureInfo.CreateSpecificCulture("en-US"))
                                         </div>
                                     </div>
                                     <div id="textComment">
@@ -233,7 +245,10 @@
                         <input type="number" name="funding" hidden="hidden" value="@Model.Funding" class="form-control" style="margin-bottom:15px;">
                         <input type="number" name="projectId" hidden="hidden" value="@Model.Id">
                         <input type="number" name="rewardId" hidden="hidden" value="@reward.Id">
-                        <button type="submit" class="btn btn-outline-info" onclick="scrollRewardUpdate()" id="btnPay">Select this reward</button>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <button type="submit" class="btn btn-outline-info" onclick="scrollRewardUpdate()" id="btnPay">Select this reward</button>
+                        }
                     </form>
                 </div>
             }
@@ -241,4 +256,8 @@
     </div>
 </div>
 
-<a asp-controller="Project" asp-action="CreateMenu" asp-route-id="@Model.Id" class="btn btn-outline-secondary">Edit</a>
+@if (User.Identity.Name == Model.User || User.IsInRole("Admin"))
+{
+    <a asp-controller="Project" asp-action="CreateMenu" asp-route-id="@Model.Id" class="btn btn-outline-secondary">Edit</a>
+}
+@*<a asp-controller="Project" asp-action="CreateMenu" asp-route-id="@Model.Id" class="btn btn-outline-secondary">Edit</a>*@

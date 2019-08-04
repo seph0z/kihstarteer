@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CourseProject.Web.Controllers
 {
+    [Authorize]
     public class ProjectController : Controller
     {
         private readonly IProjectService projectService;
@@ -43,6 +44,7 @@ namespace CourseProject.Web.Controllers
         {
             var catSel = categoryService.GetAll();
             ViewBag.Categories = catSel;
+            ViewBag.Tags = projectService.Tags();
             if (id == null)
             {
                 return View();

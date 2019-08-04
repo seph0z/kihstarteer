@@ -53,19 +53,29 @@ namespace CourseProject.Domain.Services
             _repository.SaveChanges();
         }
 
+        public IEnumerable<string> Tags()
+        {
+            var tags = tagRepository.GetAll();
+            List<string> forProject = new List<string>();
+            foreach(var tag in tags)
+            {
+                forProject.Add(tag.Text);
+            }
+            return forProject;
+        }
+
         public int Update(ProjectViewModel projectViewModel)
         {
             var project = Mapper.Map<Project>(projectViewModel);
             _repository.Update(project);
             _repository.SaveChanges();
-
-            //UpdateTags(projectViewModel.Tags, project.Id);
-
             return project.Id;
         }
 
         private void AddTags(string[] tags, int projectId)
         {
+            if (tags == null)
+                return;
             foreach (var tag in tags)
             {
                 if (tagRepository.GetAll().ToList().Find(x => x.Text == tag) == null)
@@ -89,5 +99,7 @@ namespace CourseProject.Domain.Services
             }
             tagRepository.SaveChanges();
         }
+
+
     }
 }

@@ -137,3 +137,5 @@ D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\R
 D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\MyRewards.g.cshtml.cs
 D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Show\Index.g.cshtml.cs
 D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Show\Find.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Show\GetCategory.g.cshtml.cs
+D:\Murashkevich\Repos\Course Project\CourseProject.Web\obj\Debug\netcoreapp2.2\Razor\Views\Show\GetTag.g.cshtml.cs
