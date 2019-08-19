@@ -11,7 +11,7 @@ namespace CourseProject.Web.Models
 {
     public class DropboxWorker
     {
-        private readonly string token = "Xy9Lt27y39AAAAAAAAAAIBkbfHs01snb0dSSy-RqaXyzpQqeE-wfipejXPVLhxT0";
+        private readonly string token = "";
 
         public void Add(IFormFile formFile)
         {
