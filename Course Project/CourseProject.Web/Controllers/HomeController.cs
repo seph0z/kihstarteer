@@ -13,6 +13,7 @@ namespace CourseProject.Web.Controllers
     {
         public IActionResult Index()
         {
+            int x = 5;
             return View();
         }
 

@@ -26,3 +26,17 @@ D:\Murashkevich\Visual Studio\Course Project\CourseProject.Data.EntityFramework\
 D:\Murashkevich\Visual Studio\Course Project\CourseProject.Data.EntityFramework\obj\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.csproj.CopyComplete
 D:\Murashkevich\Visual Studio\Course Project\CourseProject.Data.EntityFramework\obj\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.dll
 D:\Murashkevich\Visual Studio\Course Project\CourseProject.Data.EntityFramework\obj\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.pdb
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\bin\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.deps.json
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\bin\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.runtimeconfig.json
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\bin\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.runtimeconfig.dev.json
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\bin\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.dll
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\bin\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.pdb
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\bin\Debug\netcoreapp2.2\CourseProject.Data.Contracts.dll
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\bin\Debug\netcoreapp2.2\CourseProject.Data.Contracts.pdb
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\obj\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.csprojAssemblyReference.cache
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\obj\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.csproj.CoreCompileInputs.cache
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\obj\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.AssemblyInfoInputs.cache
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\obj\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.AssemblyInfo.cs
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\obj\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.csproj.CopyComplete
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\obj\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.dll
+D:\Repositories\kihstarteer\Course Project\CourseProject.Data.EntityFramework\obj\Debug\netcoreapp2.2\CourseProject.Data.EntityFramework.pdb

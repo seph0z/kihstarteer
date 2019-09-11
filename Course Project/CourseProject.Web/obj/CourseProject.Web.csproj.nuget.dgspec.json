@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Web\\CourseProject.Web.csproj": {}
+    "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Web\\CourseProject.Web.csproj": {}
   },
   "projects": {
-    "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj": {
+    "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj",
+        "projectUniqueName": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj",
         "projectName": "CourseProject.Data.Contracts",
-        "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\obj\\",
+        "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj",
+        "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -56,20 +56,20 @@
         }
       }
     },
-    "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj": {
+    "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj",
+        "projectUniqueName": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj",
         "projectName": "CourseProject.Data.EntityFramework",
-        "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.EntityFramework\\obj\\",
+        "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj",
+        "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.EntityFramework\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,8 +82,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj": {
-                "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj"
+              "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj": {
+                "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj"
               }
             }
           }
@@ -126,20 +126,20 @@
         }
       }
     },
-    "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj": {
+    "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj",
+        "projectUniqueName": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj",
         "projectName": "CourseProject.Domain.Contracts",
-        "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Contracts\\obj\\",
+        "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj",
+        "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -178,20 +178,20 @@
         }
       }
     },
-    "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Services\\CourseProject.Domain.Services.csproj": {
+    "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Services\\CourseProject.Domain.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Services\\CourseProject.Domain.Services.csproj",
+        "projectUniqueName": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Services\\CourseProject.Domain.Services.csproj",
         "projectName": "CourseProject.Domain.Services",
-        "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Services\\CourseProject.Domain.Services.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Services\\obj\\",
+        "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Services\\CourseProject.Domain.Services.csproj",
+        "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -204,14 +204,14 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj": {
-                "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj"
+              "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj": {
+                "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj"
               },
-              "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj": {
-                "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj"
+              "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj": {
+                "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj"
               },
-              "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj": {
-                "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj"
+              "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj": {
+                "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj"
               }
             }
           }
@@ -248,20 +248,20 @@
         }
       }
     },
-    "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Infrastructure\\CourseProject.Infrastructure.csproj": {
+    "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Infrastructure\\CourseProject.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Infrastructure\\CourseProject.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Infrastructure\\CourseProject.Infrastructure.csproj",
         "projectName": "CourseProject.Infrastructure",
-        "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Infrastructure\\CourseProject.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Infrastructure\\obj\\",
+        "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Infrastructure\\CourseProject.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -274,11 +274,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj": {
-                "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj"
+              "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj": {
+                "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj"
               },
-              "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj": {
-                "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj"
+              "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj": {
+                "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj"
               }
             }
           }
@@ -311,20 +311,20 @@
         }
       }
     },
-    "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Web\\CourseProject.Web.csproj": {
+    "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Web\\CourseProject.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Web\\CourseProject.Web.csproj",
+        "projectUniqueName": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Web\\CourseProject.Web.csproj",
         "projectName": "CourseProject.Web",
-        "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Web\\CourseProject.Web.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Web\\obj\\",
+        "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Web\\CourseProject.Web.csproj",
+        "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -337,20 +337,20 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj": {
-                "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj"
+              "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj": {
+                "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.Contracts\\CourseProject.Data.Contracts.csproj"
               },
-              "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj": {
-                "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj"
+              "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj": {
+                "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Data.EntityFramework\\CourseProject.Data.EntityFramework.csproj"
               },
-              "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj": {
-                "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj"
+              "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj": {
+                "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Contracts\\CourseProject.Domain.Contracts.csproj"
               },
-              "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Services\\CourseProject.Domain.Services.csproj": {
-                "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Domain.Services\\CourseProject.Domain.Services.csproj"
+              "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Services\\CourseProject.Domain.Services.csproj": {
+                "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Domain.Services\\CourseProject.Domain.Services.csproj"
               },
-              "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Infrastructure\\CourseProject.Infrastructure.csproj": {
-                "projectPath": "D:\\Murashkevich\\Repos\\Course Project\\CourseProject.Infrastructure\\CourseProject.Infrastructure.csproj"
+              "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Infrastructure\\CourseProject.Infrastructure.csproj": {
+                "projectPath": "D:\\Repositories\\kihstarteer\\Course Project\\CourseProject.Infrastructure\\CourseProject.Infrastructure.csproj"
               }
             }
           }
