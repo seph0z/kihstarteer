@@ -1,9 +1,0 @@
-D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.Contracts\bin\Debug\netcoreapp2.2\Kehstartir.Data.Contracts.deps.json
-D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.Contracts\bin\Debug\netcoreapp2.2\Kehstartir.Data.Contracts.dll
-D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.Contracts\bin\Debug\netcoreapp2.2\Kehstartir.Data.Contracts.pdb
-D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.Contracts\obj\Debug\netcoreapp2.2\Kehstartir.Data.Contracts.csprojAssemblyReference.cache
-D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.Contracts\obj\Debug\netcoreapp2.2\Kehstartir.Data.Contracts.csproj.CoreCompileInputs.cache
-D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.Contracts\obj\Debug\netcoreapp2.2\Kehstartir.Data.Contracts.AssemblyInfoInputs.cache
-D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.Contracts\obj\Debug\netcoreapp2.2\Kehstartir.Data.Contracts.AssemblyInfo.cs
-D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.Contracts\obj\Debug\netcoreapp2.2\Kehstartir.Data.Contracts.dll
-D:\Murashkevich\Repos\Kehstartir\Kehstartir.Data.Contracts\obj\Debug\netcoreapp2.2\Kehstartir.Data.Contracts.pdb
